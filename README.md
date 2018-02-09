@@ -12,8 +12,8 @@ Unity version-2017.x
 
 
 download depent files:
-@windows
-cd ArkUnity2018-Code
-build_dep.bat
+-windows
+-cd ArkUnity2018-Code
+-build_dep.bat
 
 
