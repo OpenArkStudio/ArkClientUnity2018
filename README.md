@@ -11,9 +11,9 @@ Unity version-2017.x
 - screen size is 1280*720. 
 
 
-download depent files:
--windows
--cd ArkUnity2018-Code
--build_dep.bat
+#download depent files:
+- windows
+- cd ArkUnity2018-Code
+- build_dep.bat
 
 
