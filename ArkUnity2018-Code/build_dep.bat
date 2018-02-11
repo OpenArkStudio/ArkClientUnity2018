@@ -2,12 +2,11 @@
 
 echo Building dependencies...
 cd Assets
-cd ArkGameFramework
 
 REM ######################################################################################################
 echo Building GameFramework...
 
 if exist GameFramework (rd GameFramework /q /s)
-git clone https://github.com/EllanJiang/GameFramework.git
+git clone https://github.com/EllanJiang/UnityGameFramework.git
 
 echo Building GameFramework Success.
