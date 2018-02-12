@@ -3,8 +3,6 @@ This is a Unity3D demo which suit for ARK.
 
 Unity version-2017.x
 
-#The project imports sub items:
-- using chinese font FangZhengChuYuan.ttf, imprted in proj.
 
 #The project some setting:
 - screen size is 1280*720. 
