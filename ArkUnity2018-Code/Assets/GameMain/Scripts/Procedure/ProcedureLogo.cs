@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using GameFramework.Fsm;
+using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 using GameFramework.Procedure;
-using UnityEngine;
 
 public class ProcedureLogo : ProcedureBase {
     public override bool UseNativeDialog
@@ -14,24 +13,21 @@ public class ProcedureLogo : ProcedureBase {
         }
     }
 
-    protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
+    protected override void OnEnter(ProcedureOwner procedureOwner)
     {
         base.OnEnter(procedureOwner);
     }
-    protected override void OnInit(IFsm<IProcedureManager> procedureOwner)
-    {
-        base.OnInit(procedureOwner);
-    }
-    protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)
+
+    protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
     {
         base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
     }
-    protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
+    protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
     {
         base.OnLeave(procedureOwner, isShutdown);
     }
-    protected override void OnDestroy(IFsm<IProcedureManager> procedureOwner)
+    protected override void OnDestroy(ProcedureOwner procedureOwner)
     {
         base.OnDestroy(procedureOwner);
     }

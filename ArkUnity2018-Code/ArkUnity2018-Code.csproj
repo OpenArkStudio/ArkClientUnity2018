@@ -265,6 +265,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="GameFramework">
+      <HintPath>Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/Administrator/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -286,11 +292,8 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Administrator/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="GameFramework">
-      <HintPath>Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="LitJson">
+      <HintPath>Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:/Program Files/Unity2017/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -312,10 +315,32 @@
   <ItemGroup>
     <Compile Include="Assets\GameMain\Scripts\Base\ARKGameEntry.Builtin.cs" />
     <Compile Include="Assets\GameMain\Scripts\Base\ARKGameEntry.cs" />
+    <Compile Include="Assets\GameMain\Scripts\DataTable\DataTableExtension.cs" />
+    <Compile Include="Assets\GameMain\Scripts\DataTable\DRMusic.cs" />
+    <Compile Include="Assets\GameMain\Scripts\DataTable\DRScene.cs" />
+    <Compile Include="Assets\GameMain\Scripts\DataTable\DRSound.cs" />
+    <Compile Include="Assets\GameMain\Scripts\DataTable\DRUISound.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Difinition\Constant\Constant.Layer.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Difinition\Constant\Constant.ProcedureData.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Difinition\Constant\Constant.Setting.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Entity\EntityData\EntityData.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Entity.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Localization\LocalizationExtension.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Localization\XmlLocalizationHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureBase.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureChangeScene.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureLaunch.cs" />
     <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureLogo.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedurePreload.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Scene\SceneId.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Sound\SoundExtension.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\AssetUtility.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\LitJsonHelper.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\WebUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\GameMain\DataTables\Scene.txt" />
+    <None Include="Assets\GameMain\Localization\ChineseSimplified\Dictionaries\Default.xml" />
     <None Include="Assets\UnityGameFramework\Libraries\GameFramework.xml" />
     <None Include="Assets\UnityGameFramework\Libraries\link.xml" />
   </ItemGroup>

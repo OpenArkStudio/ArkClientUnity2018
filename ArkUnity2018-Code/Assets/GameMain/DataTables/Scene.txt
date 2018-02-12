@@ -1,0 +1,8 @@
+﻿#	场景配置表			
+#	Id		
+#	int		string	int
+#	场景编号	备注	资源名称	背景音乐编号
+	1	加载场景	Head	1
+	2	登录场景	Login	2
+	3	大厅场景	Home	3
+	4	游戏场景	Game	4

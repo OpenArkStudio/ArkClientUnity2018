@@ -265,6 +265,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="GameFramework">
+      <HintPath>Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/Administrator/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -286,11 +292,8 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Administrator/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="GameFramework">
-      <HintPath>Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="LitJson">
+      <HintPath>Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:/Program Files/Unity2017/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -367,6 +370,8 @@
     <Compile Include="Assets\UnityGameFramework\Scripts\Editor\Misc\Type.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\GameMain\DataTables\Scene.txt" />
+    <None Include="Assets\GameMain\Localization\ChineseSimplified\Dictionaries\Default.xml" />
     <None Include="Assets\UnityGameFramework\Libraries\GameFramework.xml" />
     <None Include="Assets\UnityGameFramework\Libraries\link.xml" />
   </ItemGroup>
