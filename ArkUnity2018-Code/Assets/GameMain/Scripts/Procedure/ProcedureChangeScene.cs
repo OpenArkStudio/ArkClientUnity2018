@@ -59,7 +59,7 @@ public class ProcedureChangeScene : ProcedureBase {
     protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
     {
         base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-
+        ChangeState<ProcedureLogo>(procedureOwner);
     }
     protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
     {

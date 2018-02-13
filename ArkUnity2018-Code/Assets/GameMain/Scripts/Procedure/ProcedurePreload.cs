@@ -6,6 +6,8 @@ using UnityGameFramework.Runtime;
 using GameFramework.Event;
 using System;
 using GameFramework;
+using GameFramework.Resource;
+using UnityEngine;
 
 public class ProcedurePreload : ProcedureBase {
 
@@ -50,11 +52,36 @@ public class ProcedurePreload : ProcedureBase {
     private void PreloadResources()
     {
         LoadDataTable("Scene");
+        LoadDataTable("UIForm");
+
+        LoadDictionary("Default");
+        LoadFont("MainFont");
     }
     private void LoadDataTable(string dataTableName)
     {
         m_LoadedFlag.Add(string.Format("DataTable.{0}", dataTableName), false);
         ARKGameEntry.DataTable.LoadDataTable(dataTableName, this);
+    }
+    private void LoadDictionary(string dictionaryName)
+    {
+        m_LoadedFlag.Add(string.Format("Dictionary.{0}", dictionaryName), false);
+        ARKGameEntry.Localization.LoadDictionary(dictionaryName, this);
+    }
+    private void LoadFont(string fontName)
+    {
+        m_LoadedFlag.Add(string.Format("Font.{0}", fontName), false);
+        ARKGameEntry.Resource.LoadAsset(AssetUtility.GetFontAsset(fontName), new LoadAssetCallbacks(
+            (assetName, asset, duration, userData) =>
+            {
+                m_LoadedFlag[string.Format("Font.{0}", fontName)] = true;
+                UGuiForm.SetMainFont((Font)asset);
+                Log.Info("Load font '{0}' OK.", fontName);
+            },
+
+            (assetName, status, errorMessage, userData) =>
+            {
+                Log.Error("Can not load font '{0}' from '{1}' with error message '{2}'.", fontName, assetName, errorMessage);
+            }));
     }
     #endregion
 

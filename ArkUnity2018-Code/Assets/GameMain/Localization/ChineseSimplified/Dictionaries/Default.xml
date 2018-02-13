@@ -6,7 +6,9 @@
     <String Key="Game.Website" Value="http://GameFramework.cn/" />
     <String Key="Game.Summary" Value="这是一个使用 Game Framework 游戏框架制作的游戏演示项目，服务器使用的是ARK框架，目的是对此游戏框架的使用方法做一些示范，供使用者参考。" />
     <String Key="Game.Introduction" Value="Game Framework 是基于 Unity 5.3+ 引擎的游戏框架，主要对游戏开发过程中常用模块进行了封装，很大程度地规范开发过程、加快开发速度并保证产品质量。" />
-    <String Key="Logo.Name" Value="ARK" />
+    <String Key="LogoName.A" Value="A" />
+    <String Key="LogoName.R" Value="R" />
+    <String Key="LogoName.K" Value="K" />
     <String Key="Dialog.ConfirmButton" Value="确定" />
     <String Key="Dialog.CancelButton" Value="取消" />
     <String Key="Dialog.OtherButton" Value="" />
