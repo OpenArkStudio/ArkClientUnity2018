@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StarForce
+namespace ARKGame
 {
     public static class WebUtility
     {

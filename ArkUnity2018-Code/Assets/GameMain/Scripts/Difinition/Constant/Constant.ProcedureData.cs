@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class Constant  {
-    public static class ProcedureData
+namespace ARKGame
+{
+    public partial class Constant
     {
-        public const string NextSceneId = "NextSceneId";
-        //public const string GameMode = "GameMode";
+        public static class ProcedureData
+        {
+            public const string NextSceneId = "NextSceneId";
+            //public const string GameMode = "GameMode";
+        }
     }
 }

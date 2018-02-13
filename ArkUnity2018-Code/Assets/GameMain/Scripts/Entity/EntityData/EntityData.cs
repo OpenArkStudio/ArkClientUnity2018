@@ -3,76 +3,79 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public abstract class EntityData
+namespace ARKGame
 {
-    [SerializeField]
-    private int m_Id = 0;
-
-    [SerializeField]
-    private int m_TypeId = 0;
-
-    [SerializeField]
-    private Vector3 m_Position = Vector3.zero;
-
-    [SerializeField]
-    private Quaternion m_Rotation = Quaternion.identity;
-
-    public EntityData(int entityId, int typeId)
+    [Serializable]
+    public abstract class EntityData
     {
-        m_Id = entityId;
-        m_TypeId = typeId;
-    }
+        [SerializeField]
+        private int m_Id = 0;
 
-    /// <summary>
-    /// 实体编号。
-    /// </summary>
-    public int Id
-    {
-        get
-        {
-            return m_Id;
-        }
-    }
+        [SerializeField]
+        private int m_TypeId = 0;
 
-    /// <summary>
-    /// 实体类型编号。
-    /// </summary>
-    public int TypeId
-    {
-        get
-        {
-            return m_TypeId;
-        }
-    }
+        [SerializeField]
+        private Vector3 m_Position = Vector3.zero;
 
-    /// <summary>
-    /// 实体位置。
-    /// </summary>
-    public Vector3 Position
-    {
-        get
-        {
-            return m_Position;
-        }
-        set
-        {
-            m_Position = value;
-        }
-    }
+        [SerializeField]
+        private Quaternion m_Rotation = Quaternion.identity;
 
-    /// <summary>
-    /// 实体朝向。
-    /// </summary>
-    public Quaternion Rotation
-    {
-        get
+        public EntityData(int entityId, int typeId)
         {
-            return m_Rotation;
+            m_Id = entityId;
+            m_TypeId = typeId;
         }
-        set
+
+        /// <summary>
+        /// 实体编号。
+        /// </summary>
+        public int Id
         {
-            m_Rotation = value;
+            get
+            {
+                return m_Id;
+            }
+        }
+
+        /// <summary>
+        /// 实体类型编号。
+        /// </summary>
+        public int TypeId
+        {
+            get
+            {
+                return m_TypeId;
+            }
+        }
+
+        /// <summary>
+        /// 实体位置。
+        /// </summary>
+        public Vector3 Position
+        {
+            get
+            {
+                return m_Position;
+            }
+            set
+            {
+                m_Position = value;
+            }
+        }
+
+        /// <summary>
+        /// 实体朝向。
+        /// </summary>
+        public Quaternion Rotation
+        {
+            get
+            {
+                return m_Rotation;
+            }
+            set
+            {
+                m_Rotation = value;
+            }
         }
     }
 }

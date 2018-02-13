@@ -1,8 +1,10 @@
-﻿
-public abstract class ProcedureBase : GameFramework.Procedure.ProcedureBase
+﻿namespace ARKGame
 {
-    public abstract bool UseNativeDialog
+    public abstract class ProcedureBase : GameFramework.Procedure.ProcedureBase
     {
-        get;
+        public abstract bool UseNativeDialog
+        {
+            get;
+        }
     }
 }

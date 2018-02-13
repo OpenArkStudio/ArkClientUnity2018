@@ -1,17 +1,19 @@
 ﻿using GameFramework;
 using UnityGameFramework.Runtime;
 
-
-public static class LocalizationExtension
+namespace ARKGame
 {
-    public static void LoadDictionary(this LocalizationComponent localizationComponent, string dictionaryName, object userData = null)
+    public static class LocalizationExtension
     {
-        if (string.IsNullOrEmpty(dictionaryName))
+        public static void LoadDictionary(this LocalizationComponent localizationComponent, string dictionaryName, object userData = null)
         {
-            Log.Warning("Dictionary name is invalid.");
-            return;
-        }
+            if (string.IsNullOrEmpty(dictionaryName))
+            {
+                Log.Warning("Dictionary name is invalid.");
+                return;
+            }
 
-        localizationComponent.LoadDictionary(dictionaryName, AssetUtility.GetDictionaryAsset(dictionaryName), userData);
+            localizationComponent.LoadDictionary(dictionaryName, AssetUtility.GetDictionaryAsset(dictionaryName), userData);
+        }
     }
 }
