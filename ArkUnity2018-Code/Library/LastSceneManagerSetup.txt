@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/GameMain/Scenes/AEntry.unity
-  isLoaded: 1
-  isActive: 1
