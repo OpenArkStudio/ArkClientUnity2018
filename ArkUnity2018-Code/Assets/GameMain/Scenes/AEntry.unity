@@ -542,6 +542,10 @@ Prefab:
       propertyPath: m_LocalizationHelperTypeName
       value: XmlLocalizationHelper
       objectReference: {fileID: 0}
+    - target: {fileID: 11454530, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_UIGroupHelperTypeName
+      value: UGuiGroupHelper
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
   m_IsPrefabParent: 0
