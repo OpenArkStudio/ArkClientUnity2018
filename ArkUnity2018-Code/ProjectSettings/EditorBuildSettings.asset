@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/GameMain/Scenes/AEntry.unity
     guid: 7c68259436c84e346bff9f83d0ad3c5a
   - enabled: 1
-    path: Assets/GameMain/Scenes/Game.unity
-    guid: 6f35066f27b2d9e448d7ff37cf0a01df
-  - enabled: 1
     path: Assets/GameMain/Scenes/Head.unity
     guid: fcb039a40759da445b55eaaad8f89cbf
+  - enabled: 1
+    path: Assets/GameMain/Scenes/Login.unity
+    guid: 43d3e2e5a63ed704698efdd247c5bdde
   - enabled: 1
     path: Assets/GameMain/Scenes/Home.unity
     guid: b2bc59dbbfc74e141ab2fe1ca6129977
   - enabled: 1
-    path: Assets/GameMain/Scenes/Login.unity
-    guid: 43d3e2e5a63ed704698efdd247c5bdde
+    path: Assets/GameMain/Scenes/Game.unity
+    guid: 6f35066f27b2d9e448d7ff37cf0a01df
