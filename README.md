@@ -1,7 +1,7 @@
 # ArkClientUnity2018
 This is a Unity3D demo which suit for ARK.
 
-Unity version-2017.3.x
+Unity version-2017.x
 
 
 #The project some setting:
