@@ -1,0 +1,6 @@
+#	场景配置表		
+#	Id		AssetName
+#	int		string
+#	场景编号	策划备注	资源名称
+	10000	英雄-小明	Hero_XiaoMing
+	10001	英雄-小白	Hero_XiaoBai
