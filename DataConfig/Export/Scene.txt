@@ -1,8 +1,8 @@
-#	³¡¾°ÅäÖÃ±í				
-#	Id		Name	AssetName	BackgroudMusicId
-#	int		string	string	int
-#	³¡¾°±àºÅ	±¸×¢	³¡¾°Ãû³Æ	×ÊÔ´Ãû³Æ	±³¾°ÒôÀÖ±àºÅ
-	1	¼ÓÔØ³¡¾°	¼ÓÔØ³¡¾°	Head	1
-	2	µÇÂ½³¡¾°	µÇÂ½³¡¾°	Login	2
-	3	´óÌü³¡¾°	´óÌü³¡¾°	Home	3
-	4	ÓÎÏ·³¡¾°	ÓÎÏ·³¡¾°	Game	4
+ï»¿#	åœºæ™¯é…ç½®è¡¨			
+#	Id		AssetName	BackgroudMusicId
+#	int		string	int
+#	åœºæ™¯ç¼–å·	å¤‡æ³¨	èµ„æºåç§°	èƒŒæ™¯éŸ³ä¹ç¼–å·
+	1	åŠ è½½åœºæ™¯	Head	1
+	2	ç™»é™†åœºæ™¯	Login	2
+	3	å¤§å…åœºæ™¯	Home	3
+	4	æ¸¸æˆåœºæ™¯	Game	4
