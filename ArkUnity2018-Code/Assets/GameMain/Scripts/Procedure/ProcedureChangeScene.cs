@@ -14,7 +14,7 @@ namespace ARKGame
     {
         private bool m_IsChangeSceneComplete;
         private int m_BackgroundMusicId;
-
+        int m_SceneId;
         public override bool UseNativeDialog
         {
             get
@@ -48,12 +48,12 @@ namespace ARKGame
             //还原游戏速度
             ARKGameEntry.Base.ResetNormalGameSpeed();
 
-            int sceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
+            m_SceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
             IDataTable<DRScene> dtScene = ARKGameEntry.DataTable.GetDataTable<DRScene>();
-            DRScene drScene = dtScene.GetDataRow(sceneId);
+            DRScene drScene = dtScene.GetDataRow(m_SceneId);
             if (drScene == null)
             {
-                Log.Warning("Can not load scene '{0}' from data table.", sceneId.ToString());
+                Log.Warning("Can not load scene '{0}' from data table.", m_SceneId.ToString());
                 return;
             }
             ARKGameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName), this);
@@ -62,7 +62,22 @@ namespace ARKGame
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            ChangeState<ProcedureLogo>(procedureOwner);
+            if (!m_IsChangeSceneComplete)
+            {
+                return;
+            }
+
+            SceneId sceneId = (SceneId)m_SceneId;
+            switch (sceneId)
+            {
+                case SceneId.Head: { ChangeState<ProcedureLogo>(procedureOwner); }break;
+                case SceneId.Login: { ChangeState<ProcedureLogin>(procedureOwner); }break;
+                case SceneId.Home: { }break;
+                case SceneId.Game: { }break;
+                default:break;
+                   
+            }
+            
         }
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {

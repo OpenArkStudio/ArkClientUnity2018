@@ -16,6 +16,9 @@
         /// Logo
         /// </summary>
         LogoForm = 100,
-
+        /// <summary>
+        /// Login
+        /// </summary>
+        LoginForm = 200,
     }
 }

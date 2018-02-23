@@ -160,7 +160,7 @@ namespace ARKGame
 
         private static void OpenNativeDialog(DialogParams dialogParams)
         {
-            throw new System.NotImplementedException("OpenNativeDialog");
+            //throw new System.NotImplementedException("OpenNativeDialog");
         }
     }
 }

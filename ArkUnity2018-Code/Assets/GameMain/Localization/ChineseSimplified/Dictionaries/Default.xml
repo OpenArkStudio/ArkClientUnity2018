@@ -24,5 +24,6 @@
     <String Key="Setting.UISound" Value="界面音效" />
     <String Key="Setting.Language" Value="语言" />
     <String Key="Setting.LanguageTips" Value="更改语言需要重启游戏" />
+    <String Key="Account.Login" Value="登录" />
   </Dictionary>
 </Dictionaries>
