@@ -69,7 +69,8 @@ namespace ARKGame
             base.OnLeave(procedureOwner, isShutdown);
             if (m_logicForm != null)
             {
-                m_logicForm.Close();
+                m_logicForm.Close(true);
+                m_logicForm = null;
             }
         }
         protected override void OnDestroy(ProcedureOwner procedureOwner)

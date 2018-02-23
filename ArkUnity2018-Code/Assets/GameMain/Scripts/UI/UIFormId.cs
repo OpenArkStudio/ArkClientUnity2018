@@ -20,5 +20,13 @@
         /// Login
         /// </summary>
         LoginForm = 200,
+        /// <summary>
+        /// Home
+        /// </summary>
+        HomeForm = 300,
+        /// <summary>
+        /// Game
+        /// </summary>
+        GameForm = 400,
     }
 }

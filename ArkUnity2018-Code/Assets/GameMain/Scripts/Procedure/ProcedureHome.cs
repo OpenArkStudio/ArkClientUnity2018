@@ -10,10 +10,10 @@ using GameFramework;
 
 namespace ARKGame
 {
-    public class ProcedureLogin : ProcedureBase
+    public class ProcedureHome : ProcedureBase
     {
-        bool m_enterHome;
-        int m_formId;
+        private int m_formId;
+        private bool m_enterGame;
         public override bool UseNativeDialog
         {
             get
@@ -27,10 +27,7 @@ namespace ARKGame
             base.OnEnter(procedureOwner);
             ARKGameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             ARKGameEntry.Event.Subscribe(OpenUIFormFailureEventArgs.EventId, OnOpenUIFormFailure);
-            ARKGameEntry.UI.OpenUIForm(UIFormId.LoginForm,this);
-
-            m_enterHome = false;
-            m_formId = 0;
+            ARKGameEntry.UI.OpenUIForm(UIFormId.HomeForm, this);
         }
 
         private void OnOpenUIFormFailure(object sender, GameEventArgs e)
@@ -43,7 +40,7 @@ namespace ARKGame
         private void OnOpenUIFormSuccess(object sender, GameEventArgs e)
         {
             OpenUIFormSuccessEventArgs ne = (OpenUIFormSuccessEventArgs)e;
-            if(ne.UserData != this)
+            if (ne.UserData != this)
             {
                 return;
             }
@@ -54,10 +51,10 @@ namespace ARKGame
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            if (m_enterHome)
+            if (m_enterGame)
             {
-                m_enterHome = false;
-                procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, (int)SceneId.Home);
+                m_enterGame = false;
+                procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, (int)SceneId.Game);
                 ChangeState<ProcedureChangeScene>(procedureOwner);
             }
         }
@@ -68,11 +65,9 @@ namespace ARKGame
             ARKGameEntry.Event.Unsubscribe(OpenUIFormFailureEventArgs.EventId, OnOpenUIFormFailure);
             if (m_formId > 0)
             {
-                //ARKGameEntry.UI.CloseUIForm(m_formId);
+                ARKGameEntry.UI.CloseUIForm(m_formId);
                 m_formId = 0;
-                ARKGameEntry.UI.CloseAllLoadedUIForms();
             }
-
         }
         protected override void OnDestroy(ProcedureOwner procedureOwner)
         {
@@ -80,14 +75,12 @@ namespace ARKGame
         }
 
         #region Button Click
-
-        public void Login()
+        public void Play()
         {
-            Log.Info("Login.");
-            m_enterHome = true;
+            Log.Info("Play.");
+            m_enterGame = true;
         }
-
         #endregion
+
     }
 }
-

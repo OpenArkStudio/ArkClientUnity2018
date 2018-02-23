@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace ARKGame
 {
-    public class LoginForm : UGuiForm
+    public class GameForm : UGuiForm
     {
-        ProcedureLogin m_procedure;
-        
+        ProcedureGame m_procedure;
+
 #if UNITY_2017_3_OR_NEWER
         protected override void OnOpen(object userData)
 #else
@@ -15,7 +16,7 @@ namespace ARKGame
         {
             base.OnOpen(userData);
 
-            m_procedure = (ProcedureLogin)userData;
+            m_procedure = (ProcedureGame)userData;
 
         }
 
@@ -30,12 +31,9 @@ namespace ARKGame
         }
 
 
-        public void OnLoginClick()
+        public void OnExitClick()
         {
-            m_procedure.Login();
+            m_procedure.Exit();
         }
-
-
     }
-
 }

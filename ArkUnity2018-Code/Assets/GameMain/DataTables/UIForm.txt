@@ -5,3 +5,5 @@
 	1	弹出框	DialogForm	Default	TRUE	TRUE
 	100	Logo	LogoForm	Default	FALSE	TRUE
 	200	Login	LoginForm	Default	FALSE	TRUE
+	300	Home	HomeForm	Default	FALSE	TRUE
+	400	Game	GameForm	Default	FALSE	TRUE

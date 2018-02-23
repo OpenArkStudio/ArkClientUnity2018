@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace ARKGame
 {
-    public class LoginForm : UGuiForm
+    public class HomeForm : UGuiForm
     {
-        ProcedureLogin m_procedure;
-        
+        ProcedureHome m_procedure;
+
 #if UNITY_2017_3_OR_NEWER
         protected override void OnOpen(object userData)
 #else
@@ -15,7 +16,7 @@ namespace ARKGame
         {
             base.OnOpen(userData);
 
-            m_procedure = (ProcedureLogin)userData;
+            m_procedure = (ProcedureHome)userData;
 
         }
 
@@ -26,16 +27,15 @@ namespace ARKGame
 #endif
         {
             base.OnClose(userData);
-            m_procedure = null;
+
         }
 
 
-        public void OnLoginClick()
+        public void OnQuickPlayClick()
         {
-            m_procedure.Login();
+            m_procedure.Play();
         }
 
 
     }
-
 }

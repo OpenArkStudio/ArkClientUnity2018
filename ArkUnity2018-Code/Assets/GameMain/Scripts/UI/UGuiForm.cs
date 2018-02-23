@@ -142,7 +142,14 @@ namespace ARKGame
 
             m_CanvasGroup.alpha = 0f;
             StopAllCoroutines();
-            StartCoroutine(m_CanvasGroup.FadeToAlpha(1f, FadeTime));
+            if (m_CanvasGroup.gameObject.activeInHierarchy)
+            {
+                StartCoroutine(m_CanvasGroup.FadeToAlpha(1f, FadeTime));
+            }
+            else
+            {
+                m_CanvasGroup.FadeToAlpha(1f, FadeTime);
+            }
         }
 
 #if UNITY_2017_3_OR_NEWER
