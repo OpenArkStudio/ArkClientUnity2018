@@ -54,6 +54,7 @@ namespace ARKGame
             if (m_enterGame)
             {
                 m_enterGame = false;
+                procedureOwner.SetData<VarInt>(Constant.ProcedureData.GameMode, (int)GameMode.Common);
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, (int)SceneId.Game);
                 ChangeState<ProcedureChangeScene>(procedureOwner);
             }

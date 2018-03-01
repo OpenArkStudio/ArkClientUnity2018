@@ -1,0 +1,8 @@
+﻿#	音乐配置表		
+#	Id		AssetName
+#	int		string
+#	音乐编号	策划备注	资源名称
+	1	Logo音乐	music_logo
+	2	登录音乐	music_login
+	3	大厅音乐	music_home
+	4	战斗音乐	music_game

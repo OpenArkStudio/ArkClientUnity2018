@@ -1,6 +1,14 @@
-#	�������ñ�		
+﻿#	Entity配置表		
 #	Id		AssetName
 #	int		string
-#	�������	�߻���ע	��Դ����
-	10000	Ӣ��-С��	Hero_XiaoMing
-	10001	Ӣ��-С��	Hero_XiaoBai
+#	Entity编号	策划备注	资源名称
+	10000	英雄-小明	Hero_XiaoMing
+	10001	英雄-小白	Hero_XiaoBai
+	20000	默认推进器	DefaultEngine
+	20001	火箭推进器	RocketEngine
+	30000	默认武器	DefaultWeapon
+	40000	默认装甲	DefaultArmor
+	40001	钢铁装甲	IronArmor
+	50000	默认子弹	DefaultBolt
+	70000	小明死亡特效	XiaoMingDeadEffect
+	70001	小白死亡特效	XiaoBaiDeadEffect

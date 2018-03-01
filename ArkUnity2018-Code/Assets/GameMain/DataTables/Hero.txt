@@ -1,0 +1,6 @@
+﻿#	英雄表								
+#	Id		ThrusterId	WeaponId0	WeaponId1	ArmorId0	ArmorId1	DeadEffectId	DeadSoundId
+#	int		int	int	int	int	int	int	int
+#	Hero编号	策划备注	推进器编号	武器编号0	武器编号1	装甲编号0	装甲编号1	死亡特效编号	死亡声音编号
+	10000	小明	30000	0	0	40000	0	70000	20000
+	10001	小白	30001	0	0	40000	0	70001	20001

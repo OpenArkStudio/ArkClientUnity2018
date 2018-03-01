@@ -53,8 +53,16 @@ namespace ARKGame
 
         private void PreloadResources()
         {
+            LoadDataTable("Music");
+            LoadDataTable("Sound");
+            LoadDataTable("UISound");
             LoadDataTable("Scene");
             LoadDataTable("UIForm");
+            LoadDataTable("Entity");
+            LoadDataTable("Armor");
+            LoadDataTable("Hero");
+            LoadDataTable("Weapon");
+            LoadDataTable("Thruster");
 
             LoadDictionary("Default");
             LoadFont("MainFont");
