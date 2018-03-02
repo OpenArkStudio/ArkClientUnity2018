@@ -11,7 +11,8 @@ namespace ARKGame
     public class Hero : TargetableObject
     {
         [SerializeField]HeroData m_HeroData = null;
-
+        [SerializeField]
+        protected Mover m_Mover = null;
 #if UNITY_2017_3_OR_NEWER
         protected override void OnShow(object userData)
 #else
@@ -26,7 +27,12 @@ namespace ARKGame
                 return;
             }
             Name = string.Format("Hero ({0})",Id.ToString());
-           // ARKGameEntry.Entity.ShowThruster(m_HeroData.GetThrusterData());
+            m_Mover = gameObject.GetOrAddComponent<Mover>();
+            if (m_Mover == null)
+            {
+                Log.Error("m_Mover == null!");
+            }
+            // ARKGameEntry.Entity.ShowThruster(m_HeroData.GetThrusterData());
         }
 
         public override ImpactData GetImpactData()

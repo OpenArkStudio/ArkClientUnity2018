@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityGameFramework.Runtime;
+using GameFramework;
 
 namespace ARKGame
 {
@@ -9,10 +11,16 @@ namespace ARKGame
     {
         protected Vector2 screenDirection = Vector2.zero;
         protected float mRadius = 0f;
+        DataNodeComponent dataNodeComponent; //= ARKGameEntry.DataNode;
         protected override void Start()
         {
             base.Start();
-
+            dataNodeComponent = ARKGameEntry.DataNode;
+            if (dataNodeComponent == null)
+            {
+                Log.Error("dataNodeComponent == null!");
+                return;
+            }
             mRadius = (transform as RectTransform).sizeDelta.x * 0.5f;
             Debug.Log("mRadius = "+mRadius);
         }
@@ -27,6 +35,8 @@ namespace ARKGame
             }
             screenDirection = contentPosition / mRadius;
             Debug.Log("Drag. contentPosition="+ screenDirection);
+            dataNodeComponent.SetData<VarFloat>("ScreenDirection.X", screenDirection.x);
+            dataNodeComponent.SetData<VarFloat>("ScreenDirection.Y", screenDirection.y);
         }
         public override void OnBeginDrag(PointerEventData eventData)
         {
@@ -38,6 +48,9 @@ namespace ARKGame
             base.OnEndDrag(eventData);
             screenDirection = Vector2.zero;
             Debug.Log("End Drag. contentPosition=" + screenDirection);
+            
+            dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionX, screenDirection.x);
+            dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionY, screenDirection.y);
         }
     }
 }

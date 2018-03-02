@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ef1fd06f6720649ab6c4d6f6e7a966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ScrollCircle: {fileID: 114808576345080478}
 --- !u!114 &114769194995182306
 MonoBehaviour:
   m_ObjectHideFlags: 1

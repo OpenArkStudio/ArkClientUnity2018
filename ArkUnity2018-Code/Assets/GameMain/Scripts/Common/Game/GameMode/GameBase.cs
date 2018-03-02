@@ -40,7 +40,10 @@ namespace ARKGame
 
         public virtual void Update(float elspseSeconds,float realElapseSeconds)
         {
-
+            if (m_myHero != null)
+            {
+                
+            }
         }
 
         protected virtual void OnShowEntityFailure(object sender, GameEventArgs e)
