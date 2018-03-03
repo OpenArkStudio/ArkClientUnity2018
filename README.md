@@ -13,4 +13,5 @@ Unity version-2017.x
 - cd ArkUnity2018-Code
 - build_dep.bat
 
-
+#first scene path:
+- Assets/Scenes/AEntry.unity.
