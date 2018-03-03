@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <AssetBundleCollection>
+    <AssetBundles>
+      <AssetBundle Name="DataTables" LoadType="0" Packed="True" />
+      <AssetBundle Name="Entities" LoadType="0" Packed="True" />
+      <AssetBundle Name="Images/Common/bg0" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/bg1" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/bg2" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/box" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/button-filled" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/button-outline" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/checked" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/circle" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/circle-filled" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/circle-outline" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/dialog-background" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/info" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/line" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/progressbar" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/progressbar-background" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/progress-conner" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/round-button-filled" LoadType="0" Packed="False" />
+      <AssetBundle Name="Images/Common/round-button-outline" LoadType="0" Packed="False" />
+      <AssetBundle Name="Localization/ChineseSimplified/Dictionaries/Default" LoadType="0" Packed="False" />
+      <AssetBundle Name="Localization/ChineseSimplified/Fonts/MainFont" LoadType="0" Packed="False" />
+      <AssetBundle Name="Materials" LoadType="0" Packed="True" />
+      <AssetBundle Name="Scenes" LoadType="0" Packed="True" />
+      <AssetBundle Name="UI/Common/ScrollCircle" LoadType="0" Packed="False" />
+      <AssetBundle Name="UI/UIForms" LoadType="0" Packed="True" />
+    </AssetBundles>
+    <Assets>
+      <Asset Guid="03a3822c2e0ed6348b527e3ba47b3ba9" AssetBundleName="Images/Common/dialog-background" />
+      <Asset Guid="0a354fc86a4f30341a4b59cb49a319d9" AssetBundleName="Images/Common/progress-conner" />
+      <Asset Guid="0bb9419e7688bbd4dbfe34ff197f0024" AssetBundleName="DataTables" />
+      <Asset Guid="10d4b3e1c2da2ec4a9e5b7c115f40ffd" AssetBundleName="Images/Common/round-button-filled" />
+      <Asset Guid="20a417feb3d6c0a47afbb0e671104962" AssetBundleName="Entities" />
+      <Asset Guid="288a7e82ab9f8ef4f95a648a113cf362" AssetBundleName="Images/Common/line" />
+      <Asset Guid="29143c54760274640b967835bae1e5db" AssetBundleName="DataTables" />
+      <Asset Guid="2a899f2850780fe44bbc1788c9a71066" AssetBundleName="DataTables" />
+      <Asset Guid="2bac7d1925047b9439cc852106e5ba1c" AssetBundleName="DataTables" />
+      <Asset Guid="31fa61e7b2d17f4429da888f8ffd3044" AssetBundleName="DataTables" />
+      <Asset Guid="32f2b35b9059b3b45b463f7a25b51d5e" AssetBundleName="DataTables" />
+      <Asset Guid="3b8d54baf6df9734b884452b7894714c" AssetBundleName="Images/Common/progressbar" />
+      <Asset Guid="415fe756aec40e34fbe20800daeb8395" AssetBundleName="Materials" />
+      <Asset Guid="43d3e2e5a63ed704698efdd247c5bdde" AssetBundleName="Scenes" />
+      <Asset Guid="586ea8ca20267f84993a6a1dcd585aa2" AssetBundleName="Images/Common/round-button-outline" />
+      <Asset Guid="5ddf549ded167af43a06871267a69cc3" AssetBundleName="Images/Common/button-filled" />
+      <Asset Guid="6ccad656f93a89a4b827294e6ff52730" AssetBundleName="Images/Common/checked" />
+      <Asset Guid="6e54d5adcddb22d42a184bf251841243" AssetBundleName="DataTables" />
+      <Asset Guid="6f35066f27b2d9e448d7ff37cf0a01df" AssetBundleName="Scenes" />
+      <Asset Guid="74a085c511e18b0448145a13413d3333" AssetBundleName="DataTables" />
+      <Asset Guid="777683fc4b0d1124eb65f3d219db4c3b" AssetBundleName="UI/UIForms" />
+      <Asset Guid="77cbb7c5404c10242ab59953e0746314" AssetBundleName="Localization/ChineseSimplified/Fonts/MainFont" />
+      <Asset Guid="7b94edfce7d1f5a48a2044c240dbc5d8" AssetBundleName="Images/Common/box" />
+      <Asset Guid="7c68259436c84e346bff9f83d0ad3c5a" AssetBundleName="Scenes" />
+      <Asset Guid="82cf019cfaaa49e4ebb1591c80228a00" AssetBundleName="Images/Common/progressbar-background" />
+      <Asset Guid="872e5492feb91524dbd03e686c3dfeb9" AssetBundleName="Images/Common/circle-outline" />
+      <Asset Guid="88f12582b147d524e88c653599f533ed" AssetBundleName="Images/Common/circle" />
+      <Asset Guid="8ac84cf92f253c042b26ed094571cd14" AssetBundleName="Materials" />
+      <Asset Guid="944fbc74f2b0a694fb97365fadd48ad9" AssetBundleName="Images/Common/bg0" />
+      <Asset Guid="9be2e1e45f4edd74c8764538ad306b78" AssetBundleName="Localization/ChineseSimplified/Dictionaries/Default" />
+      <Asset Guid="9dd50a2431a7ea846a1e2ea95b94af6b" AssetBundleName="UI/UIForms" />
+      <Asset Guid="a351f29b67d1d444887a5fc188a1b51f" AssetBundleName="DataTables" />
+      <Asset Guid="a3b408afa79bc8148807356d87f23c90" AssetBundleName="Entities" />
+      <Asset Guid="a4445e634e7f0c244928e6c33e94f73d" AssetBundleName="Entities" />
+      <Asset Guid="b2bc59dbbfc74e141ab2fe1ca6129977" AssetBundleName="Scenes" />
+      <Asset Guid="b62378f5d29731e48ab2bf0f68584b01" AssetBundleName="DataTables" />
+      <Asset Guid="be4af25982748a04891f5460a2ce67c5" AssetBundleName="UI/UIForms" />
+      <Asset Guid="c1320bc41d7128b469b0e2259873d6fe" AssetBundleName="Images/Common/circle-filled" />
+      <Asset Guid="c2773318986fa1d4887a14b2acb532ed" AssetBundleName="Images/Common/button-outline" />
+      <Asset Guid="c3c3a2fcdf680a74aaa5c26632f9a20f" AssetBundleName="UI/UIForms" />
+      <Asset Guid="d068a63df5e70f14a89a6ea3f17f6e09" AssetBundleName="UI/Common/ScrollCircle" />
+      <Asset Guid="d7f18b5b16862c64ebb6201e64843300" AssetBundleName="Images/Common/bg2" />
+      <Asset Guid="e91b5a6f322cbec428a37f3c5dc6bb0a" AssetBundleName="Images/Common/info" />
+      <Asset Guid="f2b185183cac0e94aa759e326fa18fc3" AssetBundleName="Images/Common/bg1" />
+      <Asset Guid="fcb039a40759da445b55eaaad8f89cbf" AssetBundleName="Scenes" />
+    </Assets>
+  </AssetBundleCollection>
+</UnityGameFramework>

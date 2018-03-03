@@ -33,11 +33,13 @@ namespace ARKGame
             base.OnEnter(procedureOwner);
             ARKGameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             ARKGameEntry.Event.Subscribe(OpenUIFormFailureEventArgs.EventId, OnOpenUIFormFailure);
-            ARKGameEntry.UI.OpenUIForm(UIFormId.GameForm, this);
+            
 
             GameMode gameMode = (GameMode)procedureOwner.GetData<VarInt>(Constant.ProcedureData.GameMode).Value;
             m_CurrentGame = m_Games[gameMode];
             m_CurrentGame.Initialize();
+
+           
         }
 
 
@@ -50,10 +52,17 @@ namespace ARKGame
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, (int)SceneId.Home);
                 ChangeState<ProcedureChangeScene>(procedureOwner);
             }
-            if(m_CurrentGame!=null&& !m_CurrentGame.GameOver)
-            {
-                m_CurrentGame.Update(elapseSeconds, realElapseSeconds);
+            if (m_CurrentGame != null) {
+                if (m_CurrentGame.GameBegin)
+                {
+                    ARKGameEntry.UI.OpenUIForm(UIFormId.GameForm, this);
+                }
+                if (!m_CurrentGame.GameOver)
+                {
+                    m_CurrentGame.Update(elapseSeconds, realElapseSeconds);
+                }
             }
+
         }
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
@@ -77,13 +86,18 @@ namespace ARKGame
             m_Games.Clear();
         }
 
-        #region Button Click
+        #region Custom Event
 
         public void Exit()
         {
             Log.Info("Exit Game.");
             m_exit = true;
         }
+
+        //public void OpenGameUIForm()
+        //{
+        //    ARKGameEntry.UI.OpenUIForm(UIFormId.GameForm, this);
+        //}
 
         #endregion
         #region Callback

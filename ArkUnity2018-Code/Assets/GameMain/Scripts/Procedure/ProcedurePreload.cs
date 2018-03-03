@@ -29,20 +29,31 @@ namespace ARKGame
 
             ARKGameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             ARKGameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-
+            ARKGameEntry.Event.Subscribe(LoadDictionarySuccessEventArgs.EventId, OnLoadDictionarySuccess);
+            ARKGameEntry.Event.Subscribe(LoadDictionaryFailureEventArgs.EventId, OnLoadDictionaryFailure);
             PreloadResources();
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            ChangeState<ProcedureChangeScene>(procedureOwner);
+            IEnumerator<bool> iter = m_LoadedFlag.Values.GetEnumerator();
+            while (iter.MoveNext())
+            {
+                if (!iter.Current)
+                {
+                    return;
+                }
+            }
 
+            ChangeState<ProcedureChangeScene>(procedureOwner);
         }
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
             ARKGameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             ARKGameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+            ARKGameEntry.Event.Unsubscribe(LoadDictionarySuccessEventArgs.EventId, OnLoadDictionarySuccess);
+            ARKGameEntry.Event.Unsubscribe(LoadDictionaryFailureEventArgs.EventId, OnLoadDictionaryFailure);
             base.OnLeave(procedureOwner, isShutdown);
         }
         protected override void OnDestroy(ProcedureOwner procedureOwner)
@@ -120,6 +131,29 @@ namespace ARKGame
 
             m_LoadedFlag[string.Format("DataTable.{0}", ne.DataTableName)] = true;
             Log.Info("Load data table '{0}' OK.", ne.DataTableName);
+        }
+
+        private void OnLoadDictionarySuccess(object sender, GameEventArgs e)
+        {
+            LoadDictionarySuccessEventArgs ne = (LoadDictionarySuccessEventArgs)e;
+            if (ne.UserData != this)
+            {
+                return;
+            }
+
+            m_LoadedFlag[string.Format("Dictionary.{0}", ne.DictionaryName)] = true;
+            Log.Info("Load dictionary '{0}' OK.", ne.DictionaryName);
+        }
+
+        private void OnLoadDictionaryFailure(object sender, GameEventArgs e)
+        {
+            LoadDictionaryFailureEventArgs ne = (LoadDictionaryFailureEventArgs)e;
+            if (ne.UserData != this)
+            {
+                return;
+            }
+
+            Log.Error("Can not load dictionary '{0}' from '{1}' with error message '{2}'.", ne.DictionaryName, ne.DictionaryAssetName, ne.ErrorMessage);
         }
         #endregion
     }

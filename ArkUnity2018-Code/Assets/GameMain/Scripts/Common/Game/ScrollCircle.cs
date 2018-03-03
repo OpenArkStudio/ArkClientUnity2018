@@ -21,6 +21,8 @@ namespace ARKGame
                 Log.Error("dataNodeComponent == null!");
                 return;
             }
+            dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionX, screenDirection.x);
+            dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionY, screenDirection.y);
             mRadius = (transform as RectTransform).sizeDelta.x * 0.5f;
             Debug.Log("mRadius = "+mRadius);
         }
@@ -35,8 +37,8 @@ namespace ARKGame
             }
             screenDirection = contentPosition / mRadius;
             Debug.Log("Drag. contentPosition="+ screenDirection);
-            dataNodeComponent.SetData<VarFloat>("ScreenDirection.X", screenDirection.x);
-            dataNodeComponent.SetData<VarFloat>("ScreenDirection.Y", screenDirection.y);
+            dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionX, screenDirection.x);
+            dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionY, screenDirection.y);
         }
         public override void OnBeginDrag(PointerEventData eventData)
         {

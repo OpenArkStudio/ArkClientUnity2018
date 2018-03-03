@@ -10,6 +10,7 @@ namespace ARKGame
         void Start()
         {
             InitBuiltinComponents();
+            InitCustomComponents();
         }
 
     }

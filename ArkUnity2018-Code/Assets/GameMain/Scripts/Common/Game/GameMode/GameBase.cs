@@ -10,15 +10,13 @@ namespace ARKGame
 {
     public abstract class GameBase
     {
+        //游戏场开始游戏延时时间
+        static float DelayPlayingTime = 2.0f;
         public abstract GameMode GameMode { get; }
-
-        public bool GameOver
-        {
-            get;
-            protected set;
-        }
+        public bool GameBegin { get; protected set; }
+        public bool GameOver{ get; protected set; }
         private MyHero m_myHero;
-        
+        private float m_tmpTime = 0f;
         public virtual void Initialize()
         {
             ARKGameEntry.Event.Subscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
@@ -40,10 +38,20 @@ namespace ARKGame
 
         public virtual void Update(float elspseSeconds,float realElapseSeconds)
         {
-            if (m_myHero != null)
+            m_tmpTime += realElapseSeconds;
+            if (GameOver)
             {
-                
+                m_myHero.Playing = false;
+                return;
             }
+           
+            if (!GameBegin && m_tmpTime >= DelayPlayingTime)
+            {
+                GameBegin = true;
+                
+                m_myHero.Playing = true;
+            }
+           
         }
 
         protected virtual void OnShowEntityFailure(object sender, GameEventArgs e)
