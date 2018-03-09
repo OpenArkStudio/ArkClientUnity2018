@@ -24,9 +24,9 @@ namespace ARKGame
             GameOver = false;
 
             //show hero entity
-            ARKGameEntry.Entity.ShowMyHero(new HeroData(ARKGameEntry.Entity.GenerateSerialId(), 10000, CampType.Player)
+            ARKGameEntry.Entity.ShowMyHero(new HeroData(ARKGameEntry.Entity.GenerateSerialId(), 10001, CampType.Player)
             {
-                Position = new Vector3(10f, 1f, 5f),
+                Position = new Vector3(10f, 0f, 5f),
             });
         }
 

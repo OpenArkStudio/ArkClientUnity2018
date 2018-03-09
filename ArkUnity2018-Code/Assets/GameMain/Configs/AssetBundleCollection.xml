@@ -2,6 +2,24 @@
 <UnityGameFramework>
   <AssetBundleCollection>
     <AssetBundles>
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidCrouch" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidIdle" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidJumpAndFall" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidMidAir" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidRun" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurn" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurnSharp" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidStandTurn" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidWalk" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Materials/EthanGrey" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Materials/EthanWhite" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Models/Ethan" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Textures/EthanNormals" LoadType="0" Packed="False" />
+      <AssetBundle Name="Characters/ThirdPersonCharacter/Textures/EthanOcclusion" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables" LoadType="0" Packed="True" />
       <AssetBundle Name="Entities" LoadType="0" Packed="True" />
       <AssetBundle Name="Images/Common/bg0" LoadType="0" Packed="False" />
@@ -33,7 +51,11 @@
       <Asset Guid="03a3822c2e0ed6348b527e3ba47b3ba9" AssetBundleName="Images/Common/dialog-background" />
       <Asset Guid="0a354fc86a4f30341a4b59cb49a319d9" AssetBundleName="Images/Common/progress-conner" />
       <Asset Guid="0bb9419e7688bbd4dbfe34ff197f0024" AssetBundleName="DataTables" />
+      <Asset Guid="0d9d26e2162aa4d11ab075b34c029673" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp" />
+      <Asset Guid="1062212255550964e974f3ffb3cbaae3" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurn" />
       <Asset Guid="10d4b3e1c2da2ec4a9e5b7c115f40ffd" AssetBundleName="Images/Common/round-button-filled" />
+      <Asset Guid="1c52c953c83c2254a9fa72d50250f028" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn" />
+      <Asset Guid="1cb8ed3cbba15f0479fbae54e0a963df" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRun" />
       <Asset Guid="20a417feb3d6c0a47afbb0e671104962" AssetBundleName="Entities" />
       <Asset Guid="288a7e82ab9f8ef4f95a648a113cf362" AssetBundleName="Images/Common/line" />
       <Asset Guid="29143c54760274640b967835bae1e5db" AssetBundleName="DataTables" />
@@ -41,15 +63,21 @@
       <Asset Guid="2bac7d1925047b9439cc852106e5ba1c" AssetBundleName="DataTables" />
       <Asset Guid="31fa61e7b2d17f4429da888f8ffd3044" AssetBundleName="DataTables" />
       <Asset Guid="32f2b35b9059b3b45b463f7a25b51d5e" AssetBundleName="DataTables" />
+      <Asset Guid="3b5b7be0f2332c24f89a2af018daa62d" AssetBundleName="Characters/ThirdPersonCharacter/Textures/EthanNormals" />
       <Asset Guid="3b8d54baf6df9734b884452b7894714c" AssetBundleName="Images/Common/progressbar" />
       <Asset Guid="415fe756aec40e34fbe20800daeb8395" AssetBundleName="Materials" />
       <Asset Guid="43d3e2e5a63ed704698efdd247c5bdde" AssetBundleName="Scenes" />
+      <Asset Guid="4e2f32e9a1fefc24092337ae061f3dbc" AssetBundleName="Characters/ThirdPersonCharacter/Textures/EthanOcclusion" />
+      <Asset Guid="51dd2e4c869794f75a0df7d54b210214" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidJumpAndFall" />
       <Asset Guid="586ea8ca20267f84993a6a1dcd585aa2" AssetBundleName="Images/Common/round-button-outline" />
       <Asset Guid="5ddf549ded167af43a06871267a69cc3" AssetBundleName="Images/Common/button-filled" />
+      <Asset Guid="621e901dcf5ebaf46bce29d18f67194c" AssetBundleName="Characters/ThirdPersonCharacter/Materials/EthanGrey" />
       <Asset Guid="6ccad656f93a89a4b827294e6ff52730" AssetBundleName="Images/Common/checked" />
       <Asset Guid="6e54d5adcddb22d42a184bf251841243" AssetBundleName="DataTables" />
       <Asset Guid="6f35066f27b2d9e448d7ff37cf0a01df" AssetBundleName="Scenes" />
+      <Asset Guid="6fb3851da6a6f5948ab6892bee8ba920" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidStandTurn" />
       <Asset Guid="74a085c511e18b0448145a13413d3333" AssetBundleName="DataTables" />
+      <Asset Guid="7737647c22c1fc64a88d5cd030c352ce" AssetBundleName="Entities" />
       <Asset Guid="777683fc4b0d1124eb65f3d219db4c3b" AssetBundleName="UI/UIForms" />
       <Asset Guid="77cbb7c5404c10242ab59953e0746314" AssetBundleName="Localization/ChineseSimplified/Fonts/MainFont" />
       <Asset Guid="7b94edfce7d1f5a48a2044c240dbc5d8" AssetBundleName="Images/Common/box" />
@@ -62,18 +90,25 @@
       <Asset Guid="9be2e1e45f4edd74c8764538ad306b78" AssetBundleName="Localization/ChineseSimplified/Dictionaries/Default" />
       <Asset Guid="9dd50a2431a7ea846a1e2ea95b94af6b" AssetBundleName="UI/UIForms" />
       <Asset Guid="a351f29b67d1d444887a5fc188a1b51f" AssetBundleName="DataTables" />
-      <Asset Guid="a3b408afa79bc8148807356d87f23c90" AssetBundleName="Entities" />
-      <Asset Guid="a4445e634e7f0c244928e6c33e94f73d" AssetBundleName="Entities" />
+      <Asset Guid="b1a5e04ae51004842aba06704a6c2903" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalk" />
+      <Asset Guid="b235179bd2a63d1468dd430670338c55" AssetBundleName="Characters/ThirdPersonCharacter/Models/Ethan" />
       <Asset Guid="b2bc59dbbfc74e141ab2fe1ca6129977" AssetBundleName="Scenes" />
       <Asset Guid="b62378f5d29731e48ab2bf0f68584b01" AssetBundleName="DataTables" />
+      <Asset Guid="bb141fc9a700c9c4ca7e6dadb8acf24b" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp" />
       <Asset Guid="be4af25982748a04891f5460a2ce67c5" AssetBundleName="UI/UIForms" />
       <Asset Guid="c1320bc41d7128b469b0e2259873d6fe" AssetBundleName="Images/Common/circle-filled" />
       <Asset Guid="c2773318986fa1d4887a14b2acb532ed" AssetBundleName="Images/Common/button-outline" />
       <Asset Guid="c3c3a2fcdf680a74aaa5c26632f9a20f" AssetBundleName="UI/UIForms" />
       <Asset Guid="d068a63df5e70f14a89a6ea3f17f6e09" AssetBundleName="UI/Common/ScrollCircle" />
       <Asset Guid="d7f18b5b16862c64ebb6201e64843300" AssetBundleName="Images/Common/bg2" />
+      <Asset Guid="d89ea37480b6d75458aa38843e9688dc" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidCrouch" />
+      <Asset Guid="dffa50cfe77e0434bbfa71245b3dd529" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidIdle" />
+      <Asset Guid="e2cf68ff4b1ffda45a77f7307dd789b9" AssetBundleName="Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController" />
       <Asset Guid="e91b5a6f322cbec428a37f3c5dc6bb0a" AssetBundleName="Images/Common/info" />
+      <Asset Guid="f03e10c73f30b4ab4aa8ea8f1cc16d36" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidMidAir" />
       <Asset Guid="f2b185183cac0e94aa759e326fa18fc3" AssetBundleName="Images/Common/bg1" />
+      <Asset Guid="f2bed5dc5afacff44a00de8daae9703b" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurnSharp" />
+      <Asset Guid="f62b52b2d4b721742a0bc5c6b4db468d" AssetBundleName="Characters/ThirdPersonCharacter/Materials/EthanWhite" />
       <Asset Guid="fcb039a40759da445b55eaaad8f89cbf" AssetBundleName="Scenes" />
     </Assets>
   </AssetBundleCollection>
