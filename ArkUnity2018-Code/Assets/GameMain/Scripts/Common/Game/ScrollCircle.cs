@@ -35,7 +35,7 @@ namespace ARKGame
                 contentPosition = contentPosition.normalized * mRadius;
                 SetContentAnchoredPosition(contentPosition);
             }
-            screenDirection = contentPosition / mRadius;
+            screenDirection = (contentPosition / mRadius).normalized;
             Debug.Log("Drag. contentPosition="+ screenDirection);
             dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionX, screenDirection.x);
             dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionY, screenDirection.y);
