@@ -20,6 +20,7 @@
         /// Login
         /// </summary>
         LoginForm = 200,
+        ServerListForm = 201,
         /// <summary>
         /// Home
         /// </summary>

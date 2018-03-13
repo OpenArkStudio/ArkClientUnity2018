@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFMsg", "Proto\AFMsg.csproj", "{CCCC1B40-7356-4A6F-B950-FDC33E92613A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerNet", "PlayerNet\PlayerNet.csproj", "{D6EBA0B3-FF0C-42DC-A9BC-3FB52BE107E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArkDepend", "ArkDepend", "{C06C26C1-BA4E-4345-A737-BAE9AC86FDC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArkGameClient", "ArkGameClient", "{A9165BF0-CE81-4AC4-82EA-CA30FE45CC3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFCoreEx", "ArkClient_Core\AFCoreEx.csproj", "{FA92ED5F-6C15-4829-A3B5-278E088D09F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFNet", "ArkClient_Net\AFNet.csproj", "{E615A80A-B280-4E0A-8D6C-20D63A860886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "protobuf-net", "protobuf-net\protobuf-net.csproj", "{E91C373F-EE5E-415C-9255-70F3D0FA7EB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCCC1B40-7356-4A6F-B950-FDC33E92613A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCC1B40-7356-4A6F-B950-FDC33E92613A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCC1B40-7356-4A6F-B950-FDC33E92613A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCC1B40-7356-4A6F-B950-FDC33E92613A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6EBA0B3-FF0C-42DC-A9BC-3FB52BE107E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6EBA0B3-FF0C-42DC-A9BC-3FB52BE107E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6EBA0B3-FF0C-42DC-A9BC-3FB52BE107E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6EBA0B3-FF0C-42DC-A9BC-3FB52BE107E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA92ED5F-6C15-4829-A3B5-278E088D09F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA92ED5F-6C15-4829-A3B5-278E088D09F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA92ED5F-6C15-4829-A3B5-278E088D09F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA92ED5F-6C15-4829-A3B5-278E088D09F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E615A80A-B280-4E0A-8D6C-20D63A860886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E615A80A-B280-4E0A-8D6C-20D63A860886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E615A80A-B280-4E0A-8D6C-20D63A860886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E615A80A-B280-4E0A-8D6C-20D63A860886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E91C373F-EE5E-415C-9255-70F3D0FA7EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E91C373F-EE5E-415C-9255-70F3D0FA7EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E91C373F-EE5E-415C-9255-70F3D0FA7EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E91C373F-EE5E-415C-9255-70F3D0FA7EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CCCC1B40-7356-4A6F-B950-FDC33E92613A} = {A9165BF0-CE81-4AC4-82EA-CA30FE45CC3A}
+		{D6EBA0B3-FF0C-42DC-A9BC-3FB52BE107E9} = {A9165BF0-CE81-4AC4-82EA-CA30FE45CC3A}
+		{FA92ED5F-6C15-4829-A3B5-278E088D09F9} = {C06C26C1-BA4E-4345-A737-BAE9AC86FDC7}
+		{E615A80A-B280-4E0A-8D6C-20D63A860886} = {C06C26C1-BA4E-4345-A737-BAE9AC86FDC7}
+		{E91C373F-EE5E-415C-9255-70F3D0FA7EB2} = {C06C26C1-BA4E-4345-A737-BAE9AC86FDC7}
+	EndGlobalSection
+EndGlobal

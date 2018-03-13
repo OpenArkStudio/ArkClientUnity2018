@@ -25,6 +25,8 @@
     <String Key="Setting.Language" Value="语言" />
     <String Key="Setting.LanguageTips" Value="更改语言需要重启游戏" />
     <String Key="Account.Login" Value="登录" />
+    <String Key="Account.Login.ServerList" Value="服务器列表" />
+    <String Key="Account.Login.WorldServer_1" Value="Server_1" />
     <String Key="Home.QuickPlay" Value="快速开始" />
     <String Key="Game.Exit" Value="退出" />
   </Dictionary>
