@@ -20,7 +20,8 @@
         /// Login
         /// </summary>
         LoginForm = 200,
-        ServerListForm = 201,
+        WorldServerListForm = 201,
+        GameServerListForm = 202,
         /// <summary>
         /// Home
         /// </summary>

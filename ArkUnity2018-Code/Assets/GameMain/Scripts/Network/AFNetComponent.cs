@@ -1,53 +1,70 @@
-﻿using System.Collections;
+﻿using GameFramework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
 namespace ARKGame
 {
-    public class AFNetComponent : GameFrameworkComponent
+    public partial class AFNetComponent : GameFrameworkComponent
     {
-
+        
         AFNet m_net;
+        Dictionary<string, AFNet> m_nets = new Dictionary<string, AFNet>();
         public List<AFMsg.ServerInfo> m_worldServerList = new List<AFMsg.ServerInfo>();
         public List<AFMsg.ServerInfo> m_gameServerList = new List<AFMsg.ServerInfo>();
+        
+        //
+        public string m_account;
+        public string m_worldIP = "";
+        public int m_worldPort = 0;
+        public string m_worldKey = "";
 
+        public AFNet SetChannel(string channelName)
+        {
+            if (!m_nets.ContainsKey(channelName))
+            {
+                Log.Error("Cannot contains channel. channel name = "+channelName);
+                return null;
+            }
+            m_net = m_nets[channelName];
+            return m_net;
+        }
         // Use this for initialization
-        public void CreateAndConnectChannel(string channelName, string ip, int port)
+        public AFNet CreateChannel(string channelName)
         {
-            m_net = new AFNet();
-            m_net.CreateAndConnect(channelName, ip, port);
-            RegistAllHandlers();
+            var net = new AFNet();
+            m_nets.Add(channelName, net);
+            net.CreateChannel(channelName);
+            RegistAllHandlers(channelName);
+            return net;
         }
-        private void RegistAllHandlers()
+        public AFNetComponent ConnectChannel(string channelName, string ip, int port)
         {
-            RegistHandler(AFMsg.EGameMsgID.EgmiAckLogin, new AckLoginHandler());
-            RegistHandler(AFMsg.EGameMsgID.EgmiAckWorldList, new AckWorldListHandler());
+            var net = m_nets[channelName];
+            net.Connect(ip,port);
+            return this;
         }
-        private void RegistHandler(AFMsg.EGameMsgID msgID, PacketHandlerBase handler)
+
+        private void RegistAllHandlers(string channelName)
         {
-            m_net.RegisterHandler((ushort)msgID, handler);
+            var net = m_nets[channelName];
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckLogin, new AckLoginHandler());
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckWorldList, new AckWorldListHandler());
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckConnectWorld, new AckConnectWorldHandler());
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckConnectKey, new AckConnectKeyHandler());
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckSelectServer, new AckSelectGameServerHandler());
         }
-        //test
-        public void LoginPB(string strAccount, string strPassword, string strSessionKey)
+        private void RegistHandler(AFNet net, AFMsg.EGameMsgID msgID, PacketHandlerBase handler)
         {
-            AFMsg.ReqAccountLogin xData = new AFMsg.ReqAccountLogin();
-            xData.Account = strAccount;
-            xData.Password = strPassword;
-            xData.SecurityCode = strSessionKey;
-            xData.SignBuff = "";
-            xData.ClientVersion = 1;
-            xData.LoginMode = 0;
-            xData.ClientIP = 0;
-            xData.ClientMAC = 0;
-            xData.DeviceInfo = "";
-            xData.ExtraInfo = "";
-            m_net.SendMsg(new AFCoreEx.AFIDENTID(), AFMsg.EGameMsgID.EgmiReqLogin, xData);
+            net.RegisterHandler((ushort)msgID, handler);
         }
-        public void RequireWorldList()
+        public void Disconnect(string channelName)
         {
-            AFMsg.ReqServerList xData = new AFMsg.ReqServerList();
-            m_net.SendMsg(new AFCoreEx.AFIDENTID(), AFMsg.EGameMsgID.EgmiReqWorldList, xData);
+            if (m_nets.ContainsKey(channelName))
+            {
+                m_nets[channelName].Disconnect();
+            }
         }
     }
 }

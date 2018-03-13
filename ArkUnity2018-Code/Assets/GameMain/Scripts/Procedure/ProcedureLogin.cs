@@ -40,11 +40,11 @@ namespace ARKGame
             m_formId = 0;
             ////connect server
 
-            ARKGameEntry.AFNet.CreateAndConnectChannel("LoginServer", "127.0.0.1", 14001);
+            ARKGameEntry.AFNet.CreateChannel(Constant.Network.LoginChannel).Connect("127.0.0.1", 14001);
+            ARKGameEntry.AFNet.SetChannel(Constant.Network.LoginChannel);
+            ARKGameEntry.AFNet.CreateChannel(Constant.Network.WorldChannel);
+            ARKGameEntry.AFNet.CreateChannel(Constant.Network.GameChannel);
 
-            //AFNetworkChannelHelper channelHelper = new AFNetworkChannelHelper();
-            //m_loginChannel = ARKGameEntry.Network.CreateNetworkChannel("LoginServer", channelHelper);
-            //m_loginChannel.Connect(System.Net.IPAddress.Parse("127.0.0.1"), 14001);
         }
 
         
@@ -76,20 +76,7 @@ namespace ARKGame
         }
 
         #region Event Callback
-        //private void OnNetworkConnected(object sender, GameEventArgs e)
-        //{
-        //    Log.Debug("OnNetworkConnected.event.id = " + e.Id);
-        //}
-        //private void OnNetworkError(object sender, GameEventArgs e)
-        //{
-        //    Log.Debug("OnNetworkError.e.id="+e.Id);
-        //}
-        //private void OnNetworkSendPacket(object sender, GameEventArgs e)
-        //{
-        //    NetworkSendPacketEventArgs ne = (NetworkSendPacketEventArgs)e;
 
-        //    Log.Debug("OnNetworkSendPacket.e.id=" + e.Id);
-        //}
         private void OnOpenUIFormFailure(object sender, GameEventArgs e)
         {
             OpenUIFormFailureEventArgs ne = (OpenUIFormFailureEventArgs)e;
@@ -116,15 +103,46 @@ namespace ARKGame
         {
             Log.Info("Login.");
             //m_enterHome = true;
-
-
            ARKGameEntry.AFNet.LoginPB("mengdong", "123456", "");
         }
-
-        public void ShowServerListForm()
+        public void LoginSuccess()
         {
-            var listInfo = ARKGameEntry.AFNet.m_worldServerList;
-            ARKGameEntry.UI.OpenUIForm(UIFormId.ServerListForm, this);
+            m_enterHome = true;
+        }
+        public void ShowWorldServerListForm()
+        {
+            ARKGameEntry.UI.OpenUIForm(UIFormId.WorldServerListForm, this);
+        }
+        public void ShowGameServerListForm()
+        {
+            ARKGameEntry.UI.OpenUIForm(UIFormId.GameServerListForm, this);
+
+        }
+        public void ConnectWorldServer()
+        {
+            ARKGameEntry.AFNet.Disconnect(Constant.Network.LoginChannel);
+            ARKGameEntry.Event.Subscribe(NetworkConnectedEventArgs.EventId, OnConnectedWorldServer);
+            ARKGameEntry.Event.Subscribe(NetworkErrorEventArgs.EventId, OnNetworkWorldServerError);
+            ARKGameEntry.AFNet.ConnectChannel(Constant.Network.WorldChannel, ARKGameEntry.AFNet.m_worldIP, ARKGameEntry.AFNet.m_worldPort);
+            ARKGameEntry.AFNet.SetChannel(Constant.Network.WorldChannel);
+        }
+
+      
+
+        private void OnConnectedWorldServer(object sender, GameEventArgs e)
+        {
+            NetworkConnectedEventArgs ne = e as NetworkConnectedEventArgs;
+            if(ne.NetworkChannel.Name == Constant.Network.WorldChannel)
+            {
+                Log.Debug("Connect World Server Success!");
+                ARKGameEntry.AFNet.RequireVerifyWorldKey(ARKGameEntry.AFNet.m_account, ARKGameEntry.AFNet.m_worldKey);
+            }
+            ARKGameEntry.Event.Unsubscribe(NetworkConnectedEventArgs.EventId, OnConnectedWorldServer);
+            ARKGameEntry.Event.Unsubscribe(NetworkErrorEventArgs.EventId, OnNetworkWorldServerError);
+        }
+        private void OnNetworkWorldServerError(object sender, GameEventArgs e)
+        {
+            Log.Debug("Connect World Server Error!");
         }
         #endregion
 

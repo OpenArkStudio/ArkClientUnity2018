@@ -10,7 +10,8 @@
             get;
             private set;
         }
-        public static AFNetComponent AFNet;
+        public static AFNetComponent AFNet { get; private set; }
+        public static AFDataComponent AFData { get; private set; }
         //public static HPBarComponent HPBar
         //{
         //    get;
@@ -21,6 +22,7 @@
         {
             Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
             AFNet = UnityGameFramework.Runtime.GameEntry.GetComponent<AFNetComponent>();
+            AFData = UnityGameFramework.Runtime.GameEntry.GetComponent<AFDataComponent>();
             //HPBar = UnityGameFramework.Runtime.GameEntry.GetComponent<HPBarComponent>();
         }
     }

@@ -13,8 +13,11 @@ namespace ARKGame
 {
     public class AFNet 
     {
+        //public delegate void OnConnectedDelegate();
+        //private event OnConnectedDelegate m_OnConnected;
+
         Hashtable m_handlers = new Hashtable();
-        GameFramework.Network.INetworkChannel m_loginChannel;
+        GameFramework.Network.INetworkChannel m_channel;
 
         public AFNet()
         {
@@ -27,24 +30,39 @@ namespace ARKGame
             ARKGameEntry.Event.Subscribe(NetworkSendPacketEventArgs.EventId, OnNetworkSendPacket);
         }
 
-        public void CreateAndConnect(string channelName, string ip, int port)
+        public void CreateChannel(string channelName)
         {
             //connect server
             AFNetworkChannelHelper channelHelper = new AFNetworkChannelHelper(this);
-            m_loginChannel = ARKGameEntry.Network.CreateNetworkChannel(channelName, channelHelper);
-            m_loginChannel.Connect(System.Net.IPAddress.Parse(ip), port);
-
-            
+            m_channel = ARKGameEntry.Network.CreateNetworkChannel(channelName, channelHelper);
+        }
+        public void Connect(string ip, int port)
+        {
+            m_channel.Connect(System.Net.IPAddress.Parse(ip), port);
+        }
+        //public void CreateAndConnect(string channelName, string ip, int port, OnConnectedDelegate onConnected)
+        //{
+        //    //m_OnConnected += onConnected;
+        //    CreateAndConnect(channelName,ip,port);
+        //}
+        public void Disconnect()
+        {
+            ARKGameEntry.Event.Unsubscribe(NetworkConnectedEventArgs.EventId, OnNetworkConnected);
+            ARKGameEntry.Event.Unsubscribe(NetworkErrorEventArgs.EventId, OnNetworkError);
+            ARKGameEntry.Event.Unsubscribe(NetworkSendPacketEventArgs.EventId, OnNetworkSendPacket);
+            m_channel.Close();
+            //ARKGameEntry.Network.DestroyNetworkChannel(m_channel.Name);
         }
         public void OnApplicationQuit()
         {
             Log.Debug("OnApplicationQuit");
+            Disconnect();
         }
 
         #region Receiver
         public void RegisterHandler(ushort msgID, PacketHandlerBase handler)
         {
-            m_loginChannel.RegisterHandler(handler);
+            m_channel.RegisterHandler(handler);
             if(!m_handlers.ContainsKey(msgID))
             {
                 m_handlers.Add(msgID, handler);
@@ -79,51 +97,19 @@ namespace ARKGame
             head.nHead64 = xID.nHead64;
             head.nData64 = xID.nData64;
             xData.MsgHead = head;
-            m_loginChannel.Send(xData);
+            m_channel.Send(xData);
             //SendMsg(head, stream.ToArray());
         }
-        //public void SendMsg(AFCoreEx.AFIDENTID xID, AFMsg.EGameMsgID unMsgID, IMessage xData)
-        //{
-        //    MemoryStream stream = new MemoryStream();
-        //    MessageExtensions.WriteTo(xData, stream);
-        //    //SendMsg(xID, unMsgID, stream);
-        //    MsgHead head = new MsgHead();
-        //    head.unMsgID = (UInt16)unMsgID;
-        //    head.nHead64 = xID.nHead64;
-        //    head.nData64 = xID.nData64;
-            
-        //    SendMsg(head, stream.ToArray());
-        //}
-        //private void SendMsg(AFCoreEx.AFIDENTID xID, AFMsg.EGameMsgID unMsgID, MemoryStream stream)
-        //{
-        //    MsgHead head = new MsgHead();
-        //    head.unMsgID = (UInt16)unMsgID;
-        //    head.nHead64 = xID.nHead64;
-        //    head.nData64 = xID.nData64;
-        //    SendMsg(head, stream.ToArray());
-        //}
-
-
-        //public void SendMsg(MsgHead head, byte[] bodyByte)
-        //{
-        //    head.unDataLen = (UInt32)bodyByte.Length + (UInt32)ConstDefine.AF_PACKET_HEAD_SIZE;
-
-        //    byte[] headByte = StructureTransform.StructureToByteArrayEndian(head);
-            
-        //    byte[] sendBytes = new byte[head.unDataLen];
-        //    headByte.CopyTo(sendBytes, 0);
-        //    bodyByte.CopyTo(sendBytes, headByte.Length);
-
-        //    //m_loginChannel.Send(sendBytes);
-
-        //    //m_loginChannel.Send(new AFPacket());
-        //}
         #endregion
 
         #region Event Callback
         private void OnNetworkConnected(object sender, GameEventArgs e)
         {
             Log.Debug("OnNetworkConnected.event.id = " + e.Id);
+            //if (m_OnConnected != null)
+            //{
+            //    m_OnConnected();
+            //}
         }
         private void OnNetworkError(object sender, GameEventArgs e)
         {

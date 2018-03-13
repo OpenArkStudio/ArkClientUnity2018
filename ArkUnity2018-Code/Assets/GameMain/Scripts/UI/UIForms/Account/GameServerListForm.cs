@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using AFMsg;
+using GameFramework;
 using UnityEngine;
 using UnityEngine.UI;
-using GameFramework;
 
 namespace ARKGame
 {
-    //world server list
-    public class ServerListForm : UGuiForm
+    public class GameServerListForm : UGuiForm
     {
         [SerializeField]
         GameObject m_serverPrefab;
@@ -25,8 +22,7 @@ namespace ARKGame
 #endif
         {
             m_procedure = (ProcedureLogin)userData;
-
-            var listInfo = ARKGameEntry.AFNet.m_worldServerList;
+            var listInfo = ARKGameEntry.AFNet.m_gameServerList;
             m_scrollRect.content.DetachChildren();
             foreach (var v in listInfo)
             {
@@ -39,7 +35,8 @@ namespace ARKGame
             base.OnInit(userData);
         }
 
-       
+
+
 
 #if UNITY_2017_3_OR_NEWER
         protected override void OnClose(object userData)
@@ -54,8 +51,8 @@ namespace ARKGame
 
         private void ServerItem_OnSelect(ServerInfo serverInfo)
         {
-            Log.Info("ServerItem_OnSelect.serverInfo.name="+serverInfo.Name+",serverId="+serverInfo.ServerId);
-            ARKGameEntry.AFNet.RequireConnectWorld(serverInfo.ServerId);
+            Log.Info("ServerItem_OnSelect.serverInfo.name=" + serverInfo.Name + ",serverId=" + serverInfo.ServerId);
+            ARKGameEntry.AFNet.RequireSelectGameServer(serverInfo.ServerId);
         }
     }
 }

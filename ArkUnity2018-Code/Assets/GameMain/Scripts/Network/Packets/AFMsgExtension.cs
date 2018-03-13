@@ -30,4 +30,25 @@ namespace AFMsg
             
         }
     }
+    public sealed partial class ReqConnectWorld : PacketBase
+    {
+        public override void Clear()
+        {
+            
+        }
+    }
+    public sealed partial class AckConnectWorldResult : PacketBase
+    {
+        public override void Clear()
+        {
+            
+        }
+    }
+    public sealed partial class ReqSelectServer : PacketBase
+    {
+        public override void Clear()
+        {
+            
+        }
+    }
 }
