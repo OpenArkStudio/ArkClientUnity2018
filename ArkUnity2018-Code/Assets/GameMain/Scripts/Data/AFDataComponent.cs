@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using UnityGameFramework.Runtime;
 
 namespace ARKGame
@@ -17,5 +18,7 @@ namespace ARKGame
 
         public AFCoreEx.AFIDENTID m_selfRoleID;
         public AFMsg.RoleLiteInfo m_selfRoleInfo;
+        public List<AFMsg.RoleLiteInfo> m_selfRoleList = new List<AFMsg.RoleLiteInfo>();
+
     }
 }

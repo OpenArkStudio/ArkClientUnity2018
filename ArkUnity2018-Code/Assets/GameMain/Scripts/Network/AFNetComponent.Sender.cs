@@ -61,5 +61,12 @@ namespace ARKGame
             xData.WorldId = nServerID;
             m_net.SendMsg(new AFCoreEx.AFIDENTID(), AFMsg.EGameMsgID.EgmiReqSelectServer, xData);
         }
+        public void RequireRoleList(string strAccount, int nGameID)
+        {
+            AFMsg.ReqRoleList xData = new AFMsg.ReqRoleList();
+            xData.GameId = nGameID;
+            xData.Account = strAccount;
+            m_net.SendMsg(new AFCoreEx.AFIDENTID(), AFMsg.EGameMsgID.EgmiReqRoleList, xData);
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace ARKGame
         public string m_worldIP = "";
         public int m_worldPort = 0;
         public string m_worldKey = "";
-
+        public int m_serverId;
         public AFNet SetChannel(string channelName)
         {
             if (!m_nets.ContainsKey(channelName))
@@ -54,6 +54,7 @@ namespace ARKGame
             RegistHandler(net, AFMsg.EGameMsgID.EgmiAckConnectWorld, new AckConnectWorldHandler());
             RegistHandler(net, AFMsg.EGameMsgID.EgmiAckConnectKey, new AckConnectKeyHandler());
             RegistHandler(net, AFMsg.EGameMsgID.EgmiAckSelectServer, new AckSelectGameServerHandler());
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckRoleList, new AckRoleLiteInfoListHandler());
         }
         private void RegistHandler(AFNet net, AFMsg.EGameMsgID msgID, PacketHandlerBase handler)
         {

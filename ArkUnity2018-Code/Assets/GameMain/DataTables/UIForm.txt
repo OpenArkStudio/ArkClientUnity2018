@@ -7,5 +7,6 @@
 	200	Login	LoginForm	Default	FALSE	TRUE
 	201	WorldServerList	WorldServerListForm	Default	FALSE	TRUE
 	202	GameServerList	GameServerListForm	Default	FALSE	TRUE
+	203	RoleList	RoleListForm	Default	FALSE	TRUE
 	300	Home	HomeForm	Default	FALSE	TRUE
 	400	Game	GameForm	Default	FALSE	TRUE

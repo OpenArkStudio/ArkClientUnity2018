@@ -51,4 +51,18 @@ namespace AFMsg
             
         }
     }
+    public sealed partial class ReqRoleList : PacketBase
+    {
+        public override void Clear()
+        {
+           
+        }
+    }
+    public sealed partial class AckRoleLiteInfoList : PacketBase
+    {
+        public override void Clear()
+        {
+            
+        }
+    }
 }

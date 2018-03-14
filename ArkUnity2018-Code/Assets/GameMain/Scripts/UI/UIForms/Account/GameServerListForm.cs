@@ -52,6 +52,7 @@ namespace ARKGame
         private void ServerItem_OnSelect(ServerInfo serverInfo)
         {
             Log.Info("ServerItem_OnSelect.serverInfo.name=" + serverInfo.Name + ",serverId=" + serverInfo.ServerId);
+            ARKGameEntry.AFNet.m_serverId = serverInfo.ServerId;
             ARKGameEntry.AFNet.RequireSelectGameServer(serverInfo.ServerId);
         }
     }

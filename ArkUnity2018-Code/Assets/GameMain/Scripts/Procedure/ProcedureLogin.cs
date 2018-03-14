@@ -109,6 +109,10 @@ namespace ARKGame
         {
             m_enterHome = true;
         }
+        public void ShowRoleListForm()
+        {
+            ARKGameEntry.UI.OpenUIForm(UIFormId.RoleListForm, this);
+        }
         public void ShowWorldServerListForm()
         {
             ARKGameEntry.UI.OpenUIForm(UIFormId.WorldServerListForm, this);

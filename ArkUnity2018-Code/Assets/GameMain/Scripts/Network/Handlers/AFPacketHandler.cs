@@ -172,11 +172,42 @@ namespace ARKGame
             var xData = packet as AckEventResult;
             if (xData.EventCode == EGameEventCode.EgecSelectserverSuccess)
             {
-                //req role list
+               
                 Log.Debug("Select Game Server Success.");
                 //enter Home Scene.
-                ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).LoginSuccess();
+                Log.Debug("req role list. account="+ ARKGameEntry.AFNet.m_account+", serverId="+ARKGameEntry.AFNet.m_serverId);
+                ARKGameEntry.AFNet.RequireRoleList(ARKGameEntry.AFNet.m_account, ARKGameEntry.AFNet.m_serverId);
             }
+        }
+    }
+    public class AckRoleLiteInfoListHandler : PacketHandlerBase
+    {
+        public override int Id
+        {
+            get
+            {
+                return (int)AFMsg.EGameMsgID.EgmiAckRoleList;
+            }
+        }
+
+        public override PacketBase DeserializePacket(Stream source)
+        {
+            var xData = new AFMsg.AckRoleLiteInfoList();
+            xData = AckRoleLiteInfoList.Parser.ParseFrom(source);
+            return xData as PacketBase;
+        }
+
+        public override void Handle(object sender, Packet packet)
+        {
+            var xData = packet as AckRoleLiteInfoList;
+            Log.Debug("Role List Count ="+ xData.CharData.Count);
+            for (int i = 0; i < xData.CharData.Count; ++i)
+            {
+                AFMsg.RoleLiteInfo info = xData.CharData[i];
+                ARKGameEntry.AFData.m_selfRoleList.Add(info);
+            }
+            //show role list form
+             ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).ShowRoleListForm();
         }
     }
 }
