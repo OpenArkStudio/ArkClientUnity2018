@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using AFMsg;
 using UnityEngine;
 using UnityEngine.UI;
+using GameFramework;
 
 namespace ARKGame
 {
@@ -31,7 +32,10 @@ namespace ARKGame
 
         private void Item_OnSelect(RoleLiteInfo roleInfo)
         {
+            Log.Info("Select Role. role name = " + roleInfo.NoobName);
             ARKGameEntry.AFData.m_selfRoleInfo = roleInfo;
+            ARKGameEntry.AFNet.RequireEnterGameServer(ARKGameEntry.AFData.m_selfRoleID, ARKGameEntry.AFNet.m_account, roleInfo.NoobName, ARKGameEntry.AFNet.m_serverId);
+            ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).LoginSuccess();
         }
         public void Show(bool show)
         {

@@ -18,6 +18,8 @@ namespace ARKGame
          
         bool m_enterHome;
         int m_formId;
+        int m_roleListFormId;
+
         public override bool UseNativeDialog
         {
             get
@@ -31,9 +33,8 @@ namespace ARKGame
             base.OnEnter(procedureOwner);
             ARKGameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             ARKGameEntry.Event.Subscribe(OpenUIFormFailureEventArgs.EventId, OnOpenUIFormFailure);
-            //ARKGameEntry.Event.Subscribe(NetworkConnectedEventArgs.EventId, OnNetworkConnected);
-            //ARKGameEntry.Event.Subscribe(NetworkErrorEventArgs.EventId, OnNetworkError);
-            //ARKGameEntry.Event.Subscribe(NetworkSendPacketEventArgs.EventId, OnNetworkSendPacket);
+            ARKGameEntry.Event.Subscribe(CloseUIFormCompleteEventArgs.EventId, OnCloseUIFormComplete);
+
             ARKGameEntry.UI.OpenUIForm(UIFormId.LoginForm,this);
 
             m_enterHome = false;
@@ -64,12 +65,16 @@ namespace ARKGame
             base.OnLeave(procedureOwner, isShutdown);
             ARKGameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             ARKGameEntry.Event.Unsubscribe(OpenUIFormFailureEventArgs.EventId, OnOpenUIFormFailure);
+            ARKGameEntry.Event.Unsubscribe(CloseUIFormCompleteEventArgs.EventId, OnCloseUIFormComplete);
             if (m_formId > 0)
             {
                 m_formId = 0;
                 ARKGameEntry.UI.CloseAllLoadedUIForms();
             }
         }
+
+       
+
         protected override void OnDestroy(ProcedureOwner procedureOwner)
         {
             base.OnDestroy(procedureOwner);
@@ -91,10 +96,21 @@ namespace ARKGame
             {
                 return;
             }
+            if(ne.UIForm.Logic.GetType() == typeof(RoleListForm))
+            {
+                m_roleListFormId = ne.UIForm.SerialId;
+            }
             m_formId = ne.UIForm.SerialId;
             Log.Info("Open ui form success. name =" + ne.UIForm.name);
         }
-
+        private void OnCloseUIFormComplete(object sender, GameEventArgs e)
+        {
+            var ne = e as CloseUIFormCompleteEventArgs;
+            if(ne.SerialId == m_roleListFormId)
+            {
+                m_roleListFormId = 0;
+            }
+        }
         #endregion
 
         #region Button Click
@@ -111,7 +127,22 @@ namespace ARKGame
         }
         public void ShowRoleListForm()
         {
-            ARKGameEntry.UI.OpenUIForm(UIFormId.RoleListForm, this);
+            if(m_roleListFormId == 0)
+            {
+                ARKGameEntry.UI.OpenUIForm(UIFormId.RoleListForm, this);
+            }
+            else
+            {
+                var form = ARKGameEntry.UI.GetUIForm(m_roleListFormId).Logic as RoleListForm;
+                if(form != null)
+                {
+                    form.Refresh();
+                }
+                else
+                {
+                    Log.Error("Get UI Form Failed! Check it!");
+                }
+            }
         }
         public void ShowWorldServerListForm()
         {

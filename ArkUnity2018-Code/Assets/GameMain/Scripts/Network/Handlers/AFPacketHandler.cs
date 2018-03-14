@@ -201,6 +201,7 @@ namespace ARKGame
         {
             var xData = packet as AckRoleLiteInfoList;
             Log.Debug("Role List Count ="+ xData.CharData.Count);
+            ARKGameEntry.AFData.m_selfRoleList.Clear();
             for (int i = 0; i < xData.CharData.Count; ++i)
             {
                 AFMsg.RoleLiteInfo info = xData.CharData[i];
@@ -210,4 +211,5 @@ namespace ARKGame
              ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).ShowRoleListForm();
         }
     }
+    
 }

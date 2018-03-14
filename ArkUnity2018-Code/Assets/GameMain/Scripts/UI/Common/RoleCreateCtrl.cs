@@ -12,9 +12,9 @@ namespace ARKGame
         InputField m_inputRole;
 
 
-        public void Init()
+        private void Start()
         {
-
+            m_inputRole.text = "无敌是多么寂寞";
         }
         public void Show(bool show)
         {
@@ -25,6 +25,7 @@ namespace ARKGame
         {
             string role = m_inputRole.text;
             Log.Info("create role. name = "+role);
+            ARKGameEntry.AFNet.RequireCreateRole(ARKGameEntry.AFNet.m_account, role, 0, 0, ARKGameEntry.AFNet.m_serverId);
         }
         public void OnInputValueChanged(InputField input)
         {

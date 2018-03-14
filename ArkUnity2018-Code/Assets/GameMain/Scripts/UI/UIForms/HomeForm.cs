@@ -24,7 +24,7 @@ namespace ARKGame
 
             m_procedure = (ProcedureHome)userData;
 
-            
+            m_selfName.text = ARKGameEntry.AFData.m_selfRoleInfo.NoobName;
         }
 
 #if UNITY_2017_3_OR_NEWER

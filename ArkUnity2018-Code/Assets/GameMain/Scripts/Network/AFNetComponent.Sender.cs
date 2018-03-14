@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GameFramework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace ARKGame
@@ -67,6 +68,31 @@ namespace ARKGame
             xData.GameId = nGameID;
             xData.Account = strAccount;
             m_net.SendMsg(new AFCoreEx.AFIDENTID(), AFMsg.EGameMsgID.EgmiReqRoleList, xData);
+        }
+        public void RequireCreateRole(string strAccount, string strRoleName, int byCareer, int bySex, int nGameID)
+        {
+            if (strRoleName.Length >= 20 || strRoleName.Length < 1)
+            {
+                Log.Warning("Role name is invalid! Please input again!");
+                return;
+            }
+            AFMsg.ReqCreateRole xData = new AFMsg.ReqCreateRole();
+            xData.Career = byCareer;
+            xData.Sex = bySex;
+            xData.NoobName = strRoleName;
+            xData.Account = strAccount;
+            xData.Race = 0;
+            xData.GameId = nGameID;
+            m_net.SendMsg(new AFCoreEx.AFIDENTID(), AFMsg.EGameMsgID.EgmiReqCreateRole, xData);
+        }
+        public void RequireEnterGameServer(AFCoreEx.AFIDENTID objectID, string strAccount, string strRoleName, int nServerID)
+        {
+            AFMsg.ReqEnterGameServer xData = new AFMsg.ReqEnterGameServer();
+            xData.Name = strRoleName;
+            xData.Account = strAccount;
+            xData.GameId = nServerID;
+            xData.Id = ARKGameEntry.AFData.AFToPB(objectID);
+            m_net.SendMsg(objectID, AFMsg.EGameMsgID.EgmiReqEnterGame, xData);
         }
     }
 }

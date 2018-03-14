@@ -65,4 +65,18 @@ namespace AFMsg
             
         }
     }
+    public sealed partial class ReqCreateRole : PacketBase
+    {
+        public override void Clear()
+        {
+            
+        }
+    }
+    public sealed partial class ReqEnterGameServer : PacketBase
+    {
+        public override void Clear()
+        {
+            
+        }
+    }
 }

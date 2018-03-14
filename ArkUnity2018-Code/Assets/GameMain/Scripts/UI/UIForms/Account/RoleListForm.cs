@@ -23,7 +23,7 @@ namespace ARKGame
 #endif
         {
             m_procedure = (ProcedureLogin)userData;
-          
+
 
             base.OnInit(userData);
         }
@@ -35,21 +35,8 @@ namespace ARKGame
 #endif
         {
             base.OnOpen(userData);
-            var listInfo = ARKGameEntry.AFData.m_selfRoleList;
-            if (listInfo.Count == 0)
-            {
-                //create role
-                m_roleCreateCtrl.Show(true);
-                m_roleSelectListCtrl.Show(false);
-            }
-            else
-            {
-                //role list
-                m_roleCreateCtrl.Show(false);
-                m_roleSelectListCtrl.Show(true);
-                m_roleSelectListCtrl.Init();
-            }
 
+            Refresh();
         }
 
 
@@ -65,6 +52,22 @@ namespace ARKGame
         }
 
 
-      
+        public void Refresh()
+        {
+            var listInfo = ARKGameEntry.AFData.m_selfRoleList;
+            if (listInfo.Count == 0)
+            {
+                //create role
+                m_roleCreateCtrl.Show(true);
+                m_roleSelectListCtrl.Show(false);
+            }
+            else
+            {
+                //role list
+                m_roleCreateCtrl.Show(false);
+                m_roleSelectListCtrl.Show(true);
+                m_roleSelectListCtrl.Init();
+            }
+        }
     }
 }
