@@ -4,14 +4,14 @@ This is a Unity3D demo which suit for ARK.
 Unity version-2017.x
 
 
-#The project some setting:
+### The project some setting:
 - screen size is 1280*720. 
 
 
-#download depent files:
+### Download depent files:
 - windows
 - cd ArkUnity2018-Code
 - build_dep.bat
 
-#first scene path:
+### First scene path:
 - Assets/Scenes/AEntry.unity.
