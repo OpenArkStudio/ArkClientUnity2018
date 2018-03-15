@@ -6,3 +6,4 @@
 	2	登陆场景	Login	2
 	3	大厅场景	Home	3
 	4	游戏场景	Game	4
+	5	创建角色场景	CreateRole	5
