@@ -30,6 +30,7 @@
     <String Key="Account.Login.GameServer_1" Value="GameServer1" />
     <String Key="Account.Login.RoleList" Value="角色列表" />
     <String Key="Account.Login.CreateRole" Value="创建角色" />
+    <String Key="Account.Login.RoleName" Value="角色名称" />
     <String Key="Home.QuickPlay" Value="快速开始" />
     <String Key="Game.Exit" Value="退出" />
   </Dictionary>

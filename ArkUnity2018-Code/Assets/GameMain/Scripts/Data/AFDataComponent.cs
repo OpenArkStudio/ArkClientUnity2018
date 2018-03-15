@@ -10,6 +10,7 @@ namespace ARKGame
         public AFCoreEx.AFIDENTID m_selfRoleID;
         public AFMsg.RoleLiteInfo m_selfRoleInfo;
         public List<AFMsg.RoleLiteInfo> m_selfRoleList = new List<AFMsg.RoleLiteInfo>();
+        public EntityId m_selfHeroId;
 
         #region Data Transform
         public AFCoreEx.AFIDENTID PBToAF(AFMsg.Ident xID)

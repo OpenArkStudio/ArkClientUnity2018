@@ -25,6 +25,15 @@ namespace ARKGame
             m_procedure = (ProcedureHome)userData;
 
             m_selfName.text = ARKGameEntry.AFData.m_selfRoleInfo.NoobName;
+
+            var rotation = Quaternion.identity;
+            rotation.eulerAngles = Vector3.up * 180;
+            //show hero entity
+            ARKGameEntry.Entity.ShowMyHero(new HeroData(ARKGameEntry.Entity.GenerateSerialId(), (int)ARKGameEntry.AFData.m_selfHeroId, CampType.Player)
+            {
+                Position = new Vector3(192f, 0f, 126f), Rotation =rotation,
+            });
+            
         }
 
 #if UNITY_2017_3_OR_NEWER

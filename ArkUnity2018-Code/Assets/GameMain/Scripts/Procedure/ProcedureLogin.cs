@@ -17,6 +17,7 @@ namespace ARKGame
     {
          
         bool m_enterHome;
+        bool m_enterCreateRole;
         int m_formId;
         int m_roleListFormId;
 
@@ -38,6 +39,7 @@ namespace ARKGame
             ARKGameEntry.UI.OpenUIForm(UIFormId.LoginForm,this);
 
             m_enterHome = false;
+            m_enterCreateRole = false;
             m_formId = 0;
             ////connect server
 
@@ -57,6 +59,12 @@ namespace ARKGame
             {
                 m_enterHome = false;
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, (int)SceneId.Home);
+                ChangeState<ProcedureChangeScene>(procedureOwner);
+            }
+            if (m_enterCreateRole)
+            {
+                m_enterCreateRole = false;
+                procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, (int)SceneId.CreateRole);
                 ChangeState<ProcedureChangeScene>(procedureOwner);
             }
         }
@@ -125,11 +133,16 @@ namespace ARKGame
         {
             m_enterHome = true;
         }
+        public void CreateRole()
+        {
+            m_enterCreateRole = true;
+        }
         public void ShowRoleListForm()
         {
             if(m_roleListFormId == 0)
             {
-                ARKGameEntry.UI.OpenUIForm(UIFormId.RoleListForm, this);
+                CreateRole();
+                //ARKGameEntry.UI.OpenUIForm(UIFormId.RoleListForm, this);
             }
             else
             {

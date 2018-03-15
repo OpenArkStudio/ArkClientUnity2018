@@ -14,7 +14,7 @@ namespace ARKGame
         [SerializeField]
         RoleSelectListCtrl m_roleSelectListCtrl;
 
-        ProcedureLogin m_procedure;
+        ProcedureCreateRole m_procedure;
 
 #if UNITY_2017_3_OR_NEWER
         protected override void OnInit(object userData)
@@ -22,7 +22,7 @@ namespace ARKGame
         protected internal override void OnInit(object userData)
 #endif
         {
-            m_procedure = (ProcedureLogin)userData;
+            m_procedure = (ProcedureCreateRole)userData;
 
 
             base.OnInit(userData);

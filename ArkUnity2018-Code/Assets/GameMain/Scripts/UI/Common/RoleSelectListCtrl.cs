@@ -35,7 +35,7 @@ namespace ARKGame
             Log.Info("Select Role. role name = " + roleInfo.NoobName);
             ARKGameEntry.AFData.m_selfRoleInfo = roleInfo;
             ARKGameEntry.AFNet.RequireEnterGameServer(ARKGameEntry.AFData.m_selfRoleID, ARKGameEntry.AFNet.m_account, roleInfo.NoobName, ARKGameEntry.AFNet.m_serverId);
-            ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).LoginSuccess();
+            ((ProcedureCreateRole)ARKGameEntry.Procedure.CurrentProcedure).LoginSuccess();
         }
         public void Show(bool show)
         {

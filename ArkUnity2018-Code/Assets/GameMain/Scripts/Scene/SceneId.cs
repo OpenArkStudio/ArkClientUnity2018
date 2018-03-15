@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿
 namespace ARKGame
 {
     /// <summary>
@@ -27,5 +25,9 @@ namespace ARKGame
         /// Game
         /// </summary>
         Game = 4,
+        /// <summary>
+        /// Create Role
+        /// </summary>
+        CreateRole = 5,
     }
 }

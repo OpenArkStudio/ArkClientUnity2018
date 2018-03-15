@@ -207,8 +207,30 @@ namespace ARKGame
                 AFMsg.RoleLiteInfo info = xData.CharData[i];
                 ARKGameEntry.AFData.m_selfRoleList.Add(info);
             }
-            //show role list form
-             ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).ShowRoleListForm();
+            if(xData.CharData.Count == 0)//第一次登陆app需要创建角色
+            {
+                //create role
+                ((ProcedureLogin)ARKGameEntry.Procedure.CurrentProcedure).CreateRole();
+            }
+            else
+            {
+                ARKGameEntry.AFData.m_selfHeroId = EntityId.Hero_XiaoMing;
+                var roleInfo = xData.CharData[0];
+                ARKGameEntry.AFData.m_selfRoleInfo = roleInfo;
+                ARKGameEntry.AFNet.RequireEnterGameServer(ARKGameEntry.AFData.m_selfRoleID, ARKGameEntry.AFNet.m_account, roleInfo.NoobName, ARKGameEntry.AFNet.m_serverId);
+                
+                var procedure = ARKGameEntry.Procedure.CurrentProcedure;
+                if(procedure.GetType() == typeof(ProcedureLogin))
+                {
+                    //enter home
+                    ((ProcedureLogin)procedure).LoginSuccess();
+                }else if(procedure.GetType() == typeof(ProcedureCreateRole))
+                {
+                    //enter home
+                    ((ProcedureCreateRole)procedure).LoginSuccess();
+                }
+            }
+           
         }
     }
     

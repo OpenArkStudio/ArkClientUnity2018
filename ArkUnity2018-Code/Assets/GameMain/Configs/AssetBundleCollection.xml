@@ -2,6 +2,10 @@
 <UnityGameFramework>
   <AssetBundleCollection>
     <AssetBundles>
+      <AssetBundle Name="Animators/Pumpjack" LoadType="0" Packed="False" />
+      <AssetBundle Name="ArkGameClient/ArkClient_Core/README" LoadType="0" Packed="False" />
+      <AssetBundle Name="ArkGameClient/ArkClient_Net/README" LoadType="0" Packed="False" />
+      <AssetBundle Name="ArkGameClient/README" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidCrouch" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidIdle" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp" LoadType="0" Packed="False" />
@@ -43,73 +47,144 @@
       <AssetBundle Name="Localization/ChineseSimplified/Dictionaries/Default" LoadType="0" Packed="False" />
       <AssetBundle Name="Localization/ChineseSimplified/Fonts/MainFont" LoadType="0" Packed="False" />
       <AssetBundle Name="Materials" LoadType="0" Packed="True" />
+      <AssetBundle Name="Models/Building01" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Building02" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/BustedTank" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Cactus" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Cliff" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Column01" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Column02" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Concrete" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Cow" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Crater01" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Dunes01" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Dunes02" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Helipad" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/OilStorage" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/PalmTree" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/PumpJack" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Radar" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Refinery" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Rocks01" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Rocks02" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Rocks03" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Ruins01" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Shell" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Tank" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Terrain" LoadType="0" Packed="False" />
+      <AssetBundle Name="Models/Tree" LoadType="0" Packed="False" />
+      <AssetBundle Name="Prefabs/DustTrail" LoadType="0" Packed="False" />
+      <AssetBundle Name="Prefabs/LevelArt" LoadType="0" Packed="False" />
+      <AssetBundle Name="Prefabs/PumpJack" LoadType="0" Packed="False" />
+      <AssetBundle Name="Prefabs/ShellExplosion" LoadType="0" Packed="False" />
+      <AssetBundle Name="Prefabs/TankExplosion" LoadType="0" Packed="False" />
       <AssetBundle Name="Scenes" LoadType="0" Packed="True" />
+      <AssetBundle Name="UI/Common/Account/RoleSelectItem" LoadType="0" Packed="False" />
+      <AssetBundle Name="UI/Common/Account/ServerItem" LoadType="0" Packed="False" />
       <AssetBundle Name="UI/Common/ScrollCircle" LoadType="0" Packed="False" />
       <AssetBundle Name="UI/UIForms" LoadType="0" Packed="True" />
     </AssetBundles>
     <Assets>
+      <Asset Guid="002e2a607f5b64c48be0b3b0d8b8bfdd" AssetBundleName="Models/Tank" />
+      <Asset Guid="00b5a8045a3c3914bb0dfdf2d62f05c9" AssetBundleName="Models/Cactus" />
       <Asset Guid="03a3822c2e0ed6348b527e3ba47b3ba9" AssetBundleName="Images/Common/dialog-background" />
       <Asset Guid="0a354fc86a4f30341a4b59cb49a319d9" AssetBundleName="Images/Common/progress-conner" />
       <Asset Guid="0bb9419e7688bbd4dbfe34ff197f0024" AssetBundleName="DataTables" />
       <Asset Guid="0d9d26e2162aa4d11ab075b34c029673" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp" />
+      <Asset Guid="0eba80400f16aca4b9dd3354bd2ab01b" AssetBundleName="Prefabs/PumpJack" />
       <Asset Guid="1062212255550964e974f3ffb3cbaae3" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurn" />
       <Asset Guid="10d4b3e1c2da2ec4a9e5b7c115f40ffd" AssetBundleName="Images/Common/round-button-filled" />
+      <Asset Guid="126dbcddb53386c4f969fdf0c555e822" AssetBundleName="Models/Terrain" />
+      <Asset Guid="12783825d19a606449c1d81b822fb4a2" AssetBundleName="Models/Cliff" />
+      <Asset Guid="1b0f8caf6ec3ed644bf9751040d84dcb" AssetBundleName="Models/Dunes01" />
       <Asset Guid="1c52c953c83c2254a9fa72d50250f028" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn" />
       <Asset Guid="1cb8ed3cbba15f0479fbae54e0a963df" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRun" />
+      <Asset Guid="1cd1bdb2203012a40ab12a0d2fd7aa88" AssetBundleName="Prefabs/LevelArt" />
       <Asset Guid="20a417feb3d6c0a47afbb0e671104962" AssetBundleName="Entities" />
       <Asset Guid="288a7e82ab9f8ef4f95a648a113cf362" AssetBundleName="Images/Common/line" />
       <Asset Guid="29143c54760274640b967835bae1e5db" AssetBundleName="DataTables" />
+      <Asset Guid="2964d4e5af87e5245bdd71b73e9b92f1" AssetBundleName="Models/Rocks01" />
       <Asset Guid="2a899f2850780fe44bbc1788c9a71066" AssetBundleName="DataTables" />
       <Asset Guid="2bac7d1925047b9439cc852106e5ba1c" AssetBundleName="DataTables" />
       <Asset Guid="31fa61e7b2d17f4429da888f8ffd3044" AssetBundleName="DataTables" />
       <Asset Guid="32f2b35b9059b3b45b463f7a25b51d5e" AssetBundleName="DataTables" />
+      <Asset Guid="38b4fea28f58d3641980a70a5188e750" AssetBundleName="Models/Dunes02" />
       <Asset Guid="3b5b7be0f2332c24f89a2af018daa62d" AssetBundleName="Characters/ThirdPersonCharacter/Textures/EthanNormals" />
       <Asset Guid="3b8d54baf6df9734b884452b7894714c" AssetBundleName="Images/Common/progressbar" />
       <Asset Guid="415fe756aec40e34fbe20800daeb8395" AssetBundleName="Materials" />
       <Asset Guid="43d3e2e5a63ed704698efdd247c5bdde" AssetBundleName="Scenes" />
       <Asset Guid="4e2f32e9a1fefc24092337ae061f3dbc" AssetBundleName="Characters/ThirdPersonCharacter/Textures/EthanOcclusion" />
+      <Asset Guid="50912a5d3c9322a46afa5ca162962a5c" AssetBundleName="Models/Tree" />
       <Asset Guid="51dd2e4c869794f75a0df7d54b210214" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidJumpAndFall" />
       <Asset Guid="586ea8ca20267f84993a6a1dcd585aa2" AssetBundleName="Images/Common/round-button-outline" />
       <Asset Guid="5ddf549ded167af43a06871267a69cc3" AssetBundleName="Images/Common/button-filled" />
+      <Asset Guid="614b6b69c0bbcd945bb2f83eb02a3436" AssetBundleName="Models/Helipad" />
       <Asset Guid="621e901dcf5ebaf46bce29d18f67194c" AssetBundleName="Characters/ThirdPersonCharacter/Materials/EthanGrey" />
       <Asset Guid="6ccad656f93a89a4b827294e6ff52730" AssetBundleName="Images/Common/checked" />
+      <Asset Guid="6e4d8dfe03882c54380948659f725233" AssetBundleName="Models/Refinery" />
       <Asset Guid="6e54d5adcddb22d42a184bf251841243" AssetBundleName="DataTables" />
       <Asset Guid="6f35066f27b2d9e448d7ff37cf0a01df" AssetBundleName="Scenes" />
       <Asset Guid="6fb3851da6a6f5948ab6892bee8ba920" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidStandTurn" />
+      <Asset Guid="72c3675ed0f7410479fc879dd0e983e4" AssetBundleName="ArkGameClient/ArkClient_Core/README" />
       <Asset Guid="74a085c511e18b0448145a13413d3333" AssetBundleName="DataTables" />
+      <Asset Guid="74d835b756ff5654f8060c76cbcb4e19" AssetBundleName="Models/Column02" />
+      <Asset Guid="76f64af9834e4274099420c03813a09c" AssetBundleName="Scenes" />
       <Asset Guid="7737647c22c1fc64a88d5cd030c352ce" AssetBundleName="Entities" />
       <Asset Guid="777683fc4b0d1124eb65f3d219db4c3b" AssetBundleName="UI/UIForms" />
       <Asset Guid="77cbb7c5404c10242ab59953e0746314" AssetBundleName="Localization/ChineseSimplified/Fonts/MainFont" />
       <Asset Guid="7b94edfce7d1f5a48a2044c240dbc5d8" AssetBundleName="Images/Common/box" />
       <Asset Guid="7c68259436c84e346bff9f83d0ad3c5a" AssetBundleName="Scenes" />
+      <Asset Guid="7fa610bf2b9bccd48a9b3a6d79f90a37" AssetBundleName="Models/Building02" />
       <Asset Guid="82cf019cfaaa49e4ebb1591c80228a00" AssetBundleName="Images/Common/progressbar-background" />
       <Asset Guid="872e5492feb91524dbd03e686c3dfeb9" AssetBundleName="Images/Common/circle-outline" />
       <Asset Guid="88f12582b147d524e88c653599f533ed" AssetBundleName="Images/Common/circle" />
+      <Asset Guid="89e78efe92dfe5a42837b392cdb0bf9e" AssetBundleName="Prefabs/ShellExplosion" />
       <Asset Guid="8ac84cf92f253c042b26ed094571cd14" AssetBundleName="Materials" />
+      <Asset Guid="8c6d26fe262194242becdec17209d306" AssetBundleName="Models/BustedTank" />
+      <Asset Guid="8c99ccdf18f6a404f84ffd08488298d8" AssetBundleName="Models/Ruins01" />
+      <Asset Guid="8d8760d4504814540ba00eaa1d1f43ac" AssetBundleName="Models/Column01" />
+      <Asset Guid="8f90bdc8aeb4bad4db0cb091100a44f4" AssetBundleName="Models/Rocks02" />
       <Asset Guid="944fbc74f2b0a694fb97365fadd48ad9" AssetBundleName="Images/Common/bg0" />
+      <Asset Guid="961487dad48770a4d867fcbcca1e5950" AssetBundleName="Models/Cow" />
+      <Asset Guid="97806cfca905f544f85ee13a4913fa49" AssetBundleName="UI/Common/Account/RoleSelectItem" />
       <Asset Guid="9be2e1e45f4edd74c8764538ad306b78" AssetBundleName="Localization/ChineseSimplified/Dictionaries/Default" />
       <Asset Guid="9dd50a2431a7ea846a1e2ea95b94af6b" AssetBundleName="UI/UIForms" />
+      <Asset Guid="9ed1e8a25f964bd4298944675e425a0d" AssetBundleName="Models/Shell" />
+      <Asset Guid="a1194fc0a76098e499948ecf77b6acdf" AssetBundleName="Models/PalmTree" />
       <Asset Guid="a351f29b67d1d444887a5fc188a1b51f" AssetBundleName="DataTables" />
+      <Asset Guid="a588ef89c4ba85949b41f39dc775d79b" AssetBundleName="ArkGameClient/ArkClient_Net/README" />
+      <Asset Guid="a678ab9f67b4ce84093be35214bdb92d" AssetBundleName="Models/Concrete" />
+      <Asset Guid="aef18f364fed1a64ba495d15dcee610d" AssetBundleName="Models/Crater01" />
+      <Asset Guid="afd58f28713632e419efd8f302698ceb" AssetBundleName="Models/Radar" />
       <Asset Guid="b1a5e04ae51004842aba06704a6c2903" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalk" />
       <Asset Guid="b235179bd2a63d1468dd430670338c55" AssetBundleName="Characters/ThirdPersonCharacter/Models/Ethan" />
       <Asset Guid="b2bc59dbbfc74e141ab2fe1ca6129977" AssetBundleName="Scenes" />
+      <Asset Guid="b2cb90bc93cea5a419328a03551c209c" AssetBundleName="ArkGameClient/README" />
       <Asset Guid="b62378f5d29731e48ab2bf0f68584b01" AssetBundleName="DataTables" />
+      <Asset Guid="b83bf9933497ccf459675b37a3115920" AssetBundleName="Animators/Pumpjack" />
       <Asset Guid="bb141fc9a700c9c4ca7e6dadb8acf24b" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp" />
+      <Asset Guid="bc66509757ede9b4da7c9ca95c19966a" AssetBundleName="UI/Common/Account/ServerItem" />
       <Asset Guid="be4af25982748a04891f5460a2ce67c5" AssetBundleName="UI/UIForms" />
       <Asset Guid="c1320bc41d7128b469b0e2259873d6fe" AssetBundleName="Images/Common/circle-filled" />
       <Asset Guid="c2773318986fa1d4887a14b2acb532ed" AssetBundleName="Images/Common/button-outline" />
       <Asset Guid="c3c3a2fcdf680a74aaa5c26632f9a20f" AssetBundleName="UI/UIForms" />
       <Asset Guid="d068a63df5e70f14a89a6ea3f17f6e09" AssetBundleName="UI/Common/ScrollCircle" />
+      <Asset Guid="d7962f90116a5c94d9a7a2b2e4fbc1b2" AssetBundleName="Models/PumpJack" />
       <Asset Guid="d7f18b5b16862c64ebb6201e64843300" AssetBundleName="Images/Common/bg2" />
       <Asset Guid="d89ea37480b6d75458aa38843e9688dc" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidCrouch" />
       <Asset Guid="dffa50cfe77e0434bbfa71245b3dd529" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidIdle" />
       <Asset Guid="e2cf68ff4b1ffda45a77f7307dd789b9" AssetBundleName="Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController" />
+      <Asset Guid="e307cb54b57a59342868ad47d1ed0c30" AssetBundleName="Models/OilStorage" />
       <Asset Guid="e91b5a6f322cbec428a37f3c5dc6bb0a" AssetBundleName="Images/Common/info" />
+      <Asset Guid="ee49a9a8678ecf8468eb488e1ac8d42b" AssetBundleName="Prefabs/TankExplosion" />
       <Asset Guid="f03e10c73f30b4ab4aa8ea8f1cc16d36" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidMidAir" />
       <Asset Guid="f2b185183cac0e94aa759e326fa18fc3" AssetBundleName="Images/Common/bg1" />
       <Asset Guid="f2bed5dc5afacff44a00de8daae9703b" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurnSharp" />
       <Asset Guid="f62b52b2d4b721742a0bc5c6b4db468d" AssetBundleName="Characters/ThirdPersonCharacter/Materials/EthanWhite" />
+      <Asset Guid="f698f69d64c51f8438d853e5c274e5fc" AssetBundleName="Models/Building01" />
+      <Asset Guid="f7167ad2844254441b40b8a300b4f1fe" AssetBundleName="Prefabs/DustTrail" />
       <Asset Guid="fcb039a40759da445b55eaaad8f89cbf" AssetBundleName="Scenes" />
+      <Asset Guid="fd0d7091fe3f1d24e81321bc2e4209df" AssetBundleName="Models/Rocks03" />
     </Assets>
   </AssetBundleCollection>
 </UnityGameFramework>

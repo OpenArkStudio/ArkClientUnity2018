@@ -76,6 +76,7 @@ namespace ARKGame
                 case SceneId.Login: { ChangeState<ProcedureLogin>(procedureOwner); }break;
                 case SceneId.Home: { ChangeState<ProcedureHome>(procedureOwner); }break;
                 case SceneId.Game: { ChangeState<ProcedureGame>(procedureOwner); }break;
+                case SceneId.CreateRole: { ChangeState<ProcedureCreateRole>(procedureOwner); }break;
                 default:break;
                    
             }

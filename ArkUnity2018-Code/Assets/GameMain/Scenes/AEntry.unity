@@ -506,6 +506,7 @@ MonoBehaviour:
   m_worldIP: 
   m_worldPort: 0
   m_worldKey: 
+  m_serverId: 0
 --- !u!4 &1297169585 stripped
 Transform:
   m_PrefabParentObject: {fileID: 430602, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
@@ -531,7 +532,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 433714, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -583,11 +584,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[2]
-      value: ARKGame.ProcedureGame
+      value: ARKGame.ProcedureCreateRole
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
-      value: ARKGame.ProcedureHome
+      value: ARKGame.ProcedureGame
       objectReference: {fileID: 0}
     - target: {fileID: 11454530, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_UIGroups.Array.data[0].m_Name
@@ -607,15 +608,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[4]
-      value: ARKGame.ProcedureLaunch
+      value: ARKGame.ProcedureHome
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[5]
-      value: ARKGame.ProcedureLogin
+      value: ARKGame.ProcedureLaunch
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[6]
-      value: ARKGame.ProcedureLogo
+      value: ARKGame.ProcedureLogin
       objectReference: {fileID: 0}
     - target: {fileID: 11494652, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_EntityGroups.Array.data[0].m_Name
@@ -743,7 +744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[7]
-      value: ARKGame.ProcedurePreload
+      value: ARKGame.ProcedureLogo
       objectReference: {fileID: 0}
     - target: {fileID: 11499388, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_JsonHelperTypeName
@@ -754,6 +755,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: a4c1cc1e6676f0e48a527bad48941f98,
         type: 2}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[8]
+      value: ARKGame.ProcedurePreload
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
   m_IsPrefabParent: 0
