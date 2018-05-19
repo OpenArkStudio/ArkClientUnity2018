@@ -55,6 +55,7 @@ namespace ARKGame
             RegistHandler(net, AFMsg.EGameMsgID.EgmiAckConnectKey, new AckConnectKeyHandler());
             RegistHandler(net, AFMsg.EGameMsgID.EgmiAckSelectServer, new AckSelectGameServerHandler());
             RegistHandler(net, AFMsg.EGameMsgID.EgmiAckRoleList, new AckRoleLiteInfoListHandler());
+            RegistHandler(net, AFMsg.EGameMsgID.EgmiAckMove, new AckPlayerMoveHandler());
         }
         private void RegistHandler(AFNet net, AFMsg.EGameMsgID msgID, PacketHandlerBase handler)
         {

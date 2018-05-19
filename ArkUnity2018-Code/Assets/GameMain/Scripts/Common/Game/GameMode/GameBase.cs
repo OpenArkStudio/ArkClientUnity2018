@@ -15,7 +15,8 @@ namespace ARKGame
         public abstract GameMode GameMode { get; }
         public bool GameBegin { get; protected set; }
         public bool GameOver{ get; protected set; }
-        private MyHero m_myHero;
+        public MyHero m_myHero { get; protected set; }
+        
         private float m_tmpTime = 0f;
         public virtual void Initialize()
         {

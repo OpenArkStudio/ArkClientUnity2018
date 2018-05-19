@@ -6,6 +6,7 @@ using AFMsg;
 
 namespace ARKGame
 {
+    #region Login
     public class AckLoginHandler : PacketHandlerBase
     {
         public override int Id
@@ -233,5 +234,67 @@ namespace ARKGame
            
         }
     }
-    
+    #endregion
+    #region Home
+
+    #endregion
+    #region Game
+    public class AckJoinPvpHandler : PacketHandlerBase
+    {
+        public override int Id
+        {
+            get
+            {
+                return (int)AFMsg.EGameMsgID.EgmtAckStartPvp;
+            }
+        }
+
+        public override PacketBase DeserializePacket(Stream source)
+        {
+            //AFMsg.
+            return null;
+        }
+
+        public override void Handle(object sender, Packet packet)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class AckPlayerMoveHandler : PacketHandlerBase
+    {
+        public override int Id
+        {
+            get
+            {
+                return (int)AFMsg.EGameMsgID.EgmiAckMove;
+            }
+        }
+
+        public override PacketBase DeserializePacket(Stream source)
+        {
+            var xData =  ReqAckPlayerMove.Parser.ParseFrom(source);
+            return xData as PacketBase;
+        }
+
+        public override void Handle(object sender, Packet packet)
+        {
+            var xData = packet as ReqAckPlayerMove;
+            MoverCtrl moveCtrl = ((ProcedureGame)ARKGameEntry.Procedure.CurrentProcedure).m_CurrentGame.m_myHero.m_moverCtrl;
+            if (xData.TargetPos.Count > 0)
+            {
+                Log.Debug("player move. target pos =" + xData.TargetPos[0].ToString());
+                var pos = xData.TargetPos[0];
+                float h = pos.X;
+                float v = pos.Z;
+                moveCtrl.Set(h, v);
+            }
+            if (xData.SourcePos.Count > 0)
+            {
+                Log.Debug("player move. source pos =" + xData.TargetPos[0].ToString());
+                var pos = ARKGameEntry.AFData.AFPostionToVector3( xData.SourcePos[0]);
+                moveCtrl.SetPosition(pos);
+            }
+        }
+    }
+    #endregion
 }

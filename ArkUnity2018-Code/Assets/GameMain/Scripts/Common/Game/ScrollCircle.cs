@@ -36,20 +36,20 @@ namespace ARKGame
                 SetContentAnchoredPosition(contentPosition);
             }
             screenDirection = (contentPosition / mRadius).normalized;
-            Debug.Log("Drag. contentPosition="+ screenDirection);
+            //Debug.Log("Drag. contentPosition="+ screenDirection);
             dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionX, screenDirection.x);
             dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionY, screenDirection.y);
         }
         public override void OnBeginDrag(PointerEventData eventData)
         {
             base.OnBeginDrag(eventData);
-            Debug.Log("Begin Drag. contentPosition=" + screenDirection);
+            //Debug.Log("Begin Drag. contentPosition=" + screenDirection);
         }
         public override void OnEndDrag(PointerEventData eventData)
         {
             base.OnEndDrag(eventData);
             screenDirection = Vector2.zero;
-            Debug.Log("End Drag. contentPosition=" + screenDirection);
+            //Debug.Log("End Drag. contentPosition=" + screenDirection);
             
             dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionX, screenDirection.x);
             dataNodeComponent.SetData<VarFloat>(Constant.DataNodeData.ScreenDirectionY, screenDirection.y);

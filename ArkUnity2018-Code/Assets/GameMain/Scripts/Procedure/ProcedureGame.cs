@@ -13,7 +13,7 @@ namespace ARKGame
         private int m_formId;
         bool m_exit;
         private readonly Dictionary<GameMode, GameBase> m_Games = new Dictionary<GameMode, GameBase>();
-        private GameBase m_CurrentGame = null;
+        public GameBase m_CurrentGame { get; private set; }
 
         public override bool UseNativeDialog
         {

@@ -94,5 +94,24 @@ namespace ARKGame
             xData.Id = ARKGameEntry.AFData.AFToPB(objectID);
             m_net.SendMsg(objectID, AFMsg.EGameMsgID.EgmiReqEnterGame, xData);
         }
+        public void RequireHeartBeat(AFCoreEx.AFIDENTID objectID)
+        {
+            AFMsg.ReqHeartBeat xData = new AFMsg.ReqHeartBeat();
+            m_net.SendMsg(objectID, AFMsg.EGameMsgID.EgmiStsHeartBeat, xData);
+        }
+        public void RequireMove(AFCoreEx.AFIDENTID objectID, float fX, float fZ, Vector3 sourcePos)
+        {
+            AFMsg.ReqAckPlayerMove xData = new AFMsg.ReqAckPlayerMove();
+            xData.Mover = ARKGameEntry.AFData.AFToPB(objectID);
+            xData.MoveType = 0;
+
+            AFMsg.Position xTargetPos = new AFMsg.Position();
+            xTargetPos.X = fX;
+            xTargetPos.Z = fZ;
+            xData.TargetPos.Add(xTargetPos);
+            AFMsg.Position xSourcePos = ARKGameEntry.AFData.Vector3ToAFPosition(sourcePos);
+            xData.SourcePos.Add(xSourcePos);
+            m_net.SendMsg(objectID, AFMsg.EGameMsgID.EgmiReqMove, xData);
+        }
     }
 }

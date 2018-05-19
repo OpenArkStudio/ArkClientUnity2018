@@ -15,7 +15,7 @@ namespace ARKGame
         [SerializeField]bool m_playing = false;
         public bool Playing { get { return m_playing; }set { m_playing = value; } }
         //mover ctrl
-        private MoverCtrl m_moverCtrl;
+        public MoverCtrl m_moverCtrl { get; private set; }
 
         protected override void OnShow(object userData)
         {

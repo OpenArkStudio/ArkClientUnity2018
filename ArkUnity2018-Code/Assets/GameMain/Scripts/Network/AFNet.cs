@@ -120,7 +120,7 @@ namespace ARKGame
         {
             NetworkSendPacketEventArgs ne = (NetworkSendPacketEventArgs)e;
 
-            Log.Debug("OnNetworkSendPacket.e.id=" + e.Id);
+            //Log.Debug("OnNetworkSendPacket.e.id=" + e.Id);
         }
         #endregion
     }

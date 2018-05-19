@@ -79,4 +79,18 @@ namespace AFMsg
             
         }
     }
+    public sealed partial class ReqHeartBeat : PacketBase
+    {
+        public override void Clear()
+        {
+           
+        }
+    }
+    public sealed partial class ReqAckPlayerMove : PacketBase
+    {
+        public override void Clear()
+        {
+           
+        }
+    }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityGameFramework.Runtime;
 
@@ -13,20 +13,28 @@ namespace ARKGame
         public EntityId m_selfHeroId;
 
         #region Data Transform
-        public AFCoreEx.AFIDENTID PBToAF(AFMsg.Ident xID)
+        public AFCoreEx.AFIDENTID PBToAF(AFMsg.PBGUID xID)
         {
             AFCoreEx.AFIDENTID xIdent = new AFCoreEx.AFIDENTID();
             xIdent.nHead64 = xID.High;
             xIdent.nData64 = xID.Low;
             return xIdent;
         }
-        public AFMsg.Ident AFToPB(AFCoreEx.AFIDENTID xID)
+        public AFMsg.PBGUID AFToPB(AFCoreEx.AFIDENTID xID)
         {
-            AFMsg.Ident xIdent = new AFMsg.Ident();
+            AFMsg.PBGUID xIdent = new AFMsg.PBGUID();
             xIdent.High = xID.nHead64;
             xIdent.Low = xID.nData64;
 
             return xIdent;
+        }
+        public Vector3 AFPostionToVector3(AFMsg.Position xPos)
+        {
+            return new Vector3(xPos.X, xPos.Y, xPos.Z);
+        }
+        public AFMsg.Position Vector3ToAFPosition(Vector3 xVec3)
+        {
+            return new AFMsg.Position() { X = xVec3.x, Y = xVec3.y, Z = xVec3.z };
         }
         #endregion
 

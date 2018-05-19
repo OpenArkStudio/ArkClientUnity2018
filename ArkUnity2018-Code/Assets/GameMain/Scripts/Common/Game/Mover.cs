@@ -52,8 +52,8 @@ namespace ARKGame
         Vector3 m_CapsuleCenter;
         CapsuleCollider m_Capsule;
         bool m_Crouching;
-
-
+        Vector3 m_sourcePos;
+       [SerializeField] float m_smooth=200f;
         void Start()
         {
             m_Animator = GetComponent<Animator>();
@@ -64,9 +64,18 @@ namespace ARKGame
 
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
             m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+            m_sourcePos = transform.position;
         }
 
-
+        public void SetPosition(Vector3 pos)
+        {
+            m_sourcePos = pos;
+        }
+        private void Update()
+        {
+            transform.position = Vector3.Lerp(m_sourcePos, transform.position, Time.deltaTime*m_smooth);
+        }
         public void Move(Vector3 move, bool crouch, bool jump)
         {
 

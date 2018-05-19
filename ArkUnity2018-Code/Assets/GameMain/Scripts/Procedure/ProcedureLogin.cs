@@ -43,7 +43,7 @@ namespace ARKGame
             m_formId = 0;
             ////connect server
 
-            ARKGameEntry.AFNet.CreateChannel(Constant.Network.LoginChannel).Connect("127.0.0.1", 14001);
+            ARKGameEntry.AFNet.CreateChannel(Constant.Network.LoginChannel).Connect("149.28.73.215", 14001);//公网:149.28.73.215 //127.0.0.1
             ARKGameEntry.AFNet.SetChannel(Constant.Network.LoginChannel);
             ARKGameEntry.AFNet.CreateChannel(Constant.Network.WorldChannel);
             ARKGameEntry.AFNet.CreateChannel(Constant.Network.GameChannel);
