@@ -15,3 +15,6 @@ Unity version-2017.x
 
 ### First scene path:
 - Assets/Scenes/AEntry.unity.
+
+### Package tutorials:
+-http://gameframework.cn/archives/category/module/buildin/resource
